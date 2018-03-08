@@ -1,0 +1,10 @@
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\bin\Debug\BinaryConversionApplication.exe.config
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\bin\Debug\BinaryConversionApplication.exe
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\bin\Debug\BinaryConversionApplication.pdb
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.csprojResolveAssemblyReference.cache
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.Form1.resources
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.Properties.Resources.resources
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.csproj.GenerateResource.Cache
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.csproj.CoreCompileInputs.cache
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.exe
+C:\git\NET107\BinaryConversionApplication\BinaryConversionApplication\obj\Debug\BinaryConversionApplication.pdb
