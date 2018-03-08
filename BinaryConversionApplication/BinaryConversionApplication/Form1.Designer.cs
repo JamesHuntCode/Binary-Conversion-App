@@ -30,15 +30,15 @@
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
-            this.cbUnsigned = new System.Windows.Forms.CheckBox();
             this.lblRepType = new System.Windows.Forms.Label();
-            this.cbOnesComp = new System.Windows.Forms.CheckBox();
-            this.cbSigned = new System.Windows.Forms.CheckBox();
-            this.cbTwosComp = new System.Windows.Forms.CheckBox();
             this.lblConvert = new System.Windows.Forms.Label();
             this.lblYourAnswer = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
             this.lblAnswer = new System.Windows.Forms.Label();
+            this.radUnsigned = new System.Windows.Forms.RadioButton();
+            this.radTwosComp = new System.Windows.Forms.RadioButton();
+            this.radOnesComp = new System.Windows.Forms.RadioButton();
+            this.radSigned = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -61,17 +61,6 @@
             this.lblCopyright.TabIndex = 1;
             this.lblCopyright.Text = "James Hunt - 2018";
             // 
-            // cbUnsigned
-            // 
-            this.cbUnsigned.AutoSize = true;
-            this.cbUnsigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUnsigned.Location = new System.Drawing.Point(12, 174);
-            this.cbUnsigned.Name = "cbUnsigned";
-            this.cbUnsigned.Size = new System.Drawing.Size(128, 29);
-            this.cbUnsigned.TabIndex = 4;
-            this.cbUnsigned.Text = "Unsigned ";
-            this.cbUnsigned.UseVisualStyleBackColor = true;
-            // 
             // lblRepType
             // 
             this.lblRepType.AutoSize = true;
@@ -81,39 +70,6 @@
             this.lblRepType.Size = new System.Drawing.Size(358, 31);
             this.lblRepType.TabIndex = 5;
             this.lblRepType.Text = "Select Representation Type:";
-            // 
-            // cbOnesComp
-            // 
-            this.cbOnesComp.AutoSize = true;
-            this.cbOnesComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOnesComp.Location = new System.Drawing.Point(12, 244);
-            this.cbOnesComp.Name = "cbOnesComp";
-            this.cbOnesComp.Size = new System.Drawing.Size(212, 29);
-            this.cbOnesComp.TabIndex = 6;
-            this.cbOnesComp.Text = "One\'s Complement";
-            this.cbOnesComp.UseVisualStyleBackColor = true;
-            // 
-            // cbSigned
-            // 
-            this.cbSigned.AutoSize = true;
-            this.cbSigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSigned.Location = new System.Drawing.Point(12, 209);
-            this.cbSigned.Name = "cbSigned";
-            this.cbSigned.Size = new System.Drawing.Size(170, 29);
-            this.cbSigned.TabIndex = 7;
-            this.cbSigned.Text = "Signed Integer";
-            this.cbSigned.UseVisualStyleBackColor = true;
-            // 
-            // cbTwosComp
-            // 
-            this.cbTwosComp.AutoSize = true;
-            this.cbTwosComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTwosComp.Location = new System.Drawing.Point(12, 279);
-            this.cbTwosComp.Name = "cbTwosComp";
-            this.cbTwosComp.Size = new System.Drawing.Size(212, 29);
-            this.cbTwosComp.TabIndex = 8;
-            this.cbTwosComp.Text = "Two\'s Complement";
-            this.cbTwosComp.UseVisualStyleBackColor = true;
             // 
             // lblConvert
             // 
@@ -156,20 +112,68 @@
             this.lblAnswer.TabIndex = 13;
             this.lblAnswer.Text = "OUTPUT..";
             // 
+            // radUnsigned
+            // 
+            this.radUnsigned.AutoSize = true;
+            this.radUnsigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radUnsigned.Location = new System.Drawing.Point(18, 187);
+            this.radUnsigned.Name = "radUnsigned";
+            this.radUnsigned.Size = new System.Drawing.Size(121, 29);
+            this.radUnsigned.TabIndex = 14;
+            this.radUnsigned.TabStop = true;
+            this.radUnsigned.Text = "Unsigned";
+            this.radUnsigned.UseVisualStyleBackColor = true;
+            // 
+            // radTwosComp
+            // 
+            this.radTwosComp.AutoSize = true;
+            this.radTwosComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTwosComp.Location = new System.Drawing.Point(18, 292);
+            this.radTwosComp.Name = "radTwosComp";
+            this.radTwosComp.Size = new System.Drawing.Size(211, 29);
+            this.radTwosComp.TabIndex = 15;
+            this.radTwosComp.TabStop = true;
+            this.radTwosComp.Text = "Two\'s Complement";
+            this.radTwosComp.UseVisualStyleBackColor = true;
+            // 
+            // radOnesComp
+            // 
+            this.radOnesComp.AutoSize = true;
+            this.radOnesComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOnesComp.Location = new System.Drawing.Point(18, 257);
+            this.radOnesComp.Name = "radOnesComp";
+            this.radOnesComp.Size = new System.Drawing.Size(211, 29);
+            this.radOnesComp.TabIndex = 16;
+            this.radOnesComp.TabStop = true;
+            this.radOnesComp.Text = "One\'s Complement";
+            this.radOnesComp.UseVisualStyleBackColor = true;
+            // 
+            // radSigned
+            // 
+            this.radSigned.AutoSize = true;
+            this.radSigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSigned.Location = new System.Drawing.Point(18, 222);
+            this.radSigned.Name = "radSigned";
+            this.radSigned.Size = new System.Drawing.Size(169, 29);
+            this.radSigned.TabIndex = 17;
+            this.radSigned.TabStop = true;
+            this.radSigned.Text = "Signed Integer";
+            this.radSigned.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 330);
+            this.ClientSize = new System.Drawing.Size(1314, 344);
+            this.Controls.Add(this.radSigned);
+            this.Controls.Add(this.radOnesComp);
+            this.Controls.Add(this.radTwosComp);
+            this.Controls.Add(this.radUnsigned);
             this.Controls.Add(this.lblAnswer);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.lblYourAnswer);
             this.Controls.Add(this.lblConvert);
-            this.Controls.Add(this.cbTwosComp);
-            this.Controls.Add(this.cbSigned);
-            this.Controls.Add(this.cbOnesComp);
             this.Controls.Add(this.lblRepType);
-            this.Controls.Add(this.cbUnsigned);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -186,16 +190,16 @@
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblCopyright;
-        private System.Windows.Forms.CheckBox cbUnsigned;
         private System.Windows.Forms.Label lblRepType;
-        private System.Windows.Forms.CheckBox cbOnesComp;
-        private System.Windows.Forms.CheckBox cbSigned;
-        private System.Windows.Forms.CheckBox cbTwosComp;
         private System.Windows.Forms.Label lblConvert;
         private System.Windows.Forms.Label lblYourAnswer;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Label lblAnswer;
+        private System.Windows.Forms.RadioButton radUnsigned;
+        private System.Windows.Forms.RadioButton radTwosComp;
+        private System.Windows.Forms.RadioButton radOnesComp;
+        private System.Windows.Forms.RadioButton radSigned;
     }
 }
 

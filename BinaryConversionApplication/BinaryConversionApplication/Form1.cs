@@ -12,6 +12,9 @@ namespace BinaryConversionApplication
 {
     public partial class Form1 : Form
     {
+        // Custom class coded to validate user inputs
+        private BinaryValidator myValidator = new BinaryValidator();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace BinaryConversionApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             this.lblAnswer.Text = "";
+            this.radUnsigned.Checked = true;
         }
 
         
