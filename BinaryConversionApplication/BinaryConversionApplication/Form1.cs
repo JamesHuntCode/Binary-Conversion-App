@@ -22,6 +22,7 @@ namespace BinaryConversionApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Prepare form / check default values
             this.lblAnswer.Text = "";
             this.radUnsigned.Checked = true;
         }
@@ -29,7 +30,39 @@ namespace BinaryConversionApplication
         
         private void btnConvert_Click(object sender, EventArgs e)
         {
+            // Get user input
+            string userInput = this.getUserInput();
+            MessageBox.Show(userInput);
+            
 
+            // Validate the input
+            if (myValidator.ValidateUserInput(userInput))
+            {
+                // Input is valid - continue
+                RawBinaryInput userBinaryInput = new RawBinaryInput(userInput);
+                // Come back here <------------ begin coding other methods to call from within this if block
+            }
+            else
+            {
+                // Input is not valid - stop
+            }
+        }
+
+        // Method used to retrieve user input from form
+        private string getUserInput()
+        {
+            string userInput = "";
+
+            try
+            {
+                userInput = this.txtInputBinary.Text;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Oops! " + err.Message + " Please try again.");
+            }
+
+            return userInput;
         }
     }
 }

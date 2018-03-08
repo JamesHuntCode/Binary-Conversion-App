@@ -39,6 +39,7 @@
             this.radTwosComp = new System.Windows.Forms.RadioButton();
             this.radOnesComp = new System.Windows.Forms.RadioButton();
             this.radSigned = new System.Windows.Forms.RadioButton();
+            this.txtInputBinary = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -94,7 +95,7 @@
             // btnConvert
             // 
             this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvert.Location = new System.Drawing.Point(570, 214);
+            this.btnConvert.Location = new System.Drawing.Point(570, 262);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(256, 59);
             this.btnConvert.TabIndex = 11;
@@ -160,11 +161,20 @@
             this.radSigned.Text = "Signed Integer";
             this.radSigned.UseVisualStyleBackColor = true;
             // 
+            // txtInputBinary
+            // 
+            this.txtInputBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInputBinary.Location = new System.Drawing.Point(570, 187);
+            this.txtInputBinary.Name = "txtInputBinary";
+            this.txtInputBinary.Size = new System.Drawing.Size(256, 31);
+            this.txtInputBinary.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 344);
+            this.Controls.Add(this.txtInputBinary);
             this.Controls.Add(this.radSigned);
             this.Controls.Add(this.radOnesComp);
             this.Controls.Add(this.radTwosComp);
@@ -200,6 +210,7 @@
         private System.Windows.Forms.RadioButton radTwosComp;
         private System.Windows.Forms.RadioButton radOnesComp;
         private System.Windows.Forms.RadioButton radSigned;
+        private System.Windows.Forms.TextBox txtInputBinary;
     }
 }
 

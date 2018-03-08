@@ -9,7 +9,7 @@ namespace BinaryConversionApplication
     public class BinaryValidator
     {
         // Method to ensure user has entered valid data
-        public bool ValidateUserInput(RawBinaryInput input)
+        public bool ValidateUserInput(string input)
         {
             return true; // Come back to this method later
         }
