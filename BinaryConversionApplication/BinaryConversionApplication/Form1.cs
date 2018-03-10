@@ -23,8 +23,9 @@ namespace BinaryConversionApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             // Prepare form / check default values
-            this.lblAnswer.Text = "";
+            
             this.radUnsigned.Checked = true;
+            this.radDecimalOut.Checked = true;
         }
 
         
@@ -32,7 +33,6 @@ namespace BinaryConversionApplication
         {
             // Get user input
             string userInput = this.getUserInput();
-            MessageBox.Show(userInput);
             
 
             // Validate the input
@@ -40,7 +40,7 @@ namespace BinaryConversionApplication
             {
                 // Input is valid - continue
                 RawBinaryInput userBinaryInput = new RawBinaryInput(userInput);
-                // Come back here <------------ begin coding other methods to call from within this if block
+                
             }
             else
             {

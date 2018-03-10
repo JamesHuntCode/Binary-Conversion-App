@@ -34,19 +34,31 @@
             this.lblConvert = new System.Windows.Forms.Label();
             this.lblYourAnswer = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
-            this.lblAnswer = new System.Windows.Forms.Label();
             this.radUnsigned = new System.Windows.Forms.RadioButton();
             this.radTwosComp = new System.Windows.Forms.RadioButton();
             this.radOnesComp = new System.Windows.Forms.RadioButton();
             this.radSigned = new System.Windows.Forms.RadioButton();
+            this.grpInput = new System.Windows.Forms.GroupBox();
+            this.grpOutput = new System.Windows.Forms.GroupBox();
+            this.radUnsignedOut = new System.Windows.Forms.RadioButton();
+            this.radTwosOut = new System.Windows.Forms.RadioButton();
+            this.radSignedOut = new System.Windows.Forms.RadioButton();
+            this.radOnesOut = new System.Windows.Forms.RadioButton();
+            this.radDecimalOut = new System.Windows.Forms.RadioButton();
+            this.lblBeginConversion = new System.Windows.Forms.Label();
             this.txtInputBinary = new System.Windows.Forms.TextBox();
+            this.lvlYourInput = new System.Windows.Forms.Label();
+            this.txtOutputBinary = new System.Windows.Forms.TextBox();
+            this.radDecimal = new System.Windows.Forms.RadioButton();
+            this.grpInput.SuspendLayout();
+            this.grpOutput.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(463, 9);
+            this.lblHeader.Location = new System.Drawing.Point(12, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(480, 39);
             this.lblHeader.TabIndex = 0;
@@ -56,7 +68,7 @@
             // 
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(1185, 9);
+            this.lblCopyright.Location = new System.Drawing.Point(610, 9);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(117, 16);
             this.lblCopyright.TabIndex = 1;
@@ -76,17 +88,17 @@
             // 
             this.lblConvert.AutoSize = true;
             this.lblConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvert.Location = new System.Drawing.Point(564, 127);
+            this.lblConvert.Location = new System.Drawing.Point(12, 387);
             this.lblConvert.Name = "lblConvert";
-            this.lblConvert.Size = new System.Drawing.Size(262, 31);
+            this.lblConvert.Size = new System.Drawing.Size(157, 31);
             this.lblConvert.TabIndex = 9;
-            this.lblConvert.Text = "Convert To Decimal:";
+            this.lblConvert.Text = "Convert To:";
             // 
             // lblYourAnswer
             // 
             this.lblYourAnswer.AutoSize = true;
             this.lblYourAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourAnswer.Location = new System.Drawing.Point(1125, 127);
+            this.lblYourAnswer.Location = new System.Drawing.Point(530, 551);
             this.lblYourAnswer.Name = "lblYourAnswer";
             this.lblYourAnswer.Size = new System.Drawing.Size(177, 31);
             this.lblYourAnswer.TabIndex = 10;
@@ -95,29 +107,19 @@
             // btnConvert
             // 
             this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvert.Location = new System.Drawing.Point(570, 262);
+            this.btnConvert.Location = new System.Drawing.Point(509, 359);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(256, 59);
+            this.btnConvert.Size = new System.Drawing.Size(217, 59);
             this.btnConvert.TabIndex = 11;
-            this.btnConvert.Text = "Convert";
+            this.btnConvert.Text = "Convert Values";
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
-            // 
-            // lblAnswer
-            // 
-            this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswer.Location = new System.Drawing.Point(1126, 231);
-            this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(110, 25);
-            this.lblAnswer.TabIndex = 13;
-            this.lblAnswer.Text = "OUTPUT..";
             // 
             // radUnsigned
             // 
             this.radUnsigned.AutoSize = true;
             this.radUnsigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radUnsigned.Location = new System.Drawing.Point(18, 187);
+            this.radUnsigned.Location = new System.Drawing.Point(0, 19);
             this.radUnsigned.Name = "radUnsigned";
             this.radUnsigned.Size = new System.Drawing.Size(121, 29);
             this.radUnsigned.TabIndex = 14;
@@ -129,7 +131,7 @@
             // 
             this.radTwosComp.AutoSize = true;
             this.radTwosComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTwosComp.Location = new System.Drawing.Point(18, 292);
+            this.radTwosComp.Location = new System.Drawing.Point(0, 124);
             this.radTwosComp.Name = "radTwosComp";
             this.radTwosComp.Size = new System.Drawing.Size(211, 29);
             this.radTwosComp.TabIndex = 15;
@@ -141,7 +143,7 @@
             // 
             this.radOnesComp.AutoSize = true;
             this.radOnesComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOnesComp.Location = new System.Drawing.Point(18, 257);
+            this.radOnesComp.Location = new System.Drawing.Point(0, 89);
             this.radOnesComp.Name = "radOnesComp";
             this.radOnesComp.Size = new System.Drawing.Size(211, 29);
             this.radOnesComp.TabIndex = 16;
@@ -153,7 +155,7 @@
             // 
             this.radSigned.AutoSize = true;
             this.radSigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radSigned.Location = new System.Drawing.Point(18, 222);
+            this.radSigned.Location = new System.Drawing.Point(0, 54);
             this.radSigned.Name = "radSigned";
             this.radSigned.Size = new System.Drawing.Size(169, 29);
             this.radSigned.TabIndex = 17;
@@ -161,25 +163,153 @@
             this.radSigned.Text = "Signed Integer";
             this.radSigned.UseVisualStyleBackColor = true;
             // 
+            // grpInput
+            // 
+            this.grpInput.Controls.Add(this.radDecimal);
+            this.grpInput.Controls.Add(this.radUnsigned);
+            this.grpInput.Controls.Add(this.radTwosComp);
+            this.grpInput.Controls.Add(this.radSigned);
+            this.grpInput.Controls.Add(this.radOnesComp);
+            this.grpInput.Location = new System.Drawing.Point(18, 181);
+            this.grpInput.Name = "grpInput";
+            this.grpInput.Size = new System.Drawing.Size(217, 193);
+            this.grpInput.TabIndex = 19;
+            this.grpInput.TabStop = false;
+            this.grpInput.Text = "Input";
+            // 
+            // grpOutput
+            // 
+            this.grpOutput.Controls.Add(this.radDecimalOut);
+            this.grpOutput.Controls.Add(this.radUnsignedOut);
+            this.grpOutput.Controls.Add(this.radTwosOut);
+            this.grpOutput.Controls.Add(this.radSignedOut);
+            this.grpOutput.Controls.Add(this.radOnesOut);
+            this.grpOutput.Location = new System.Drawing.Point(18, 431);
+            this.grpOutput.Name = "grpOutput";
+            this.grpOutput.Size = new System.Drawing.Size(217, 196);
+            this.grpOutput.TabIndex = 20;
+            this.grpOutput.TabStop = false;
+            this.grpOutput.Text = "Output";
+            // 
+            // radUnsignedOut
+            // 
+            this.radUnsignedOut.AutoSize = true;
+            this.radUnsignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radUnsignedOut.Location = new System.Drawing.Point(0, 19);
+            this.radUnsignedOut.Name = "radUnsignedOut";
+            this.radUnsignedOut.Size = new System.Drawing.Size(121, 29);
+            this.radUnsignedOut.TabIndex = 14;
+            this.radUnsignedOut.TabStop = true;
+            this.radUnsignedOut.Text = "Unsigned";
+            this.radUnsignedOut.UseVisualStyleBackColor = true;
+            // 
+            // radTwosOut
+            // 
+            this.radTwosOut.AutoSize = true;
+            this.radTwosOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTwosOut.Location = new System.Drawing.Point(0, 124);
+            this.radTwosOut.Name = "radTwosOut";
+            this.radTwosOut.Size = new System.Drawing.Size(211, 29);
+            this.radTwosOut.TabIndex = 15;
+            this.radTwosOut.TabStop = true;
+            this.radTwosOut.Text = "Two\'s Complement";
+            this.radTwosOut.UseVisualStyleBackColor = true;
+            // 
+            // radSignedOut
+            // 
+            this.radSignedOut.AutoSize = true;
+            this.radSignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSignedOut.Location = new System.Drawing.Point(0, 54);
+            this.radSignedOut.Name = "radSignedOut";
+            this.radSignedOut.Size = new System.Drawing.Size(169, 29);
+            this.radSignedOut.TabIndex = 17;
+            this.radSignedOut.TabStop = true;
+            this.radSignedOut.Text = "Signed Integer";
+            this.radSignedOut.UseVisualStyleBackColor = true;
+            // 
+            // radOnesOut
+            // 
+            this.radOnesOut.AutoSize = true;
+            this.radOnesOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOnesOut.Location = new System.Drawing.Point(0, 89);
+            this.radOnesOut.Name = "radOnesOut";
+            this.radOnesOut.Size = new System.Drawing.Size(211, 29);
+            this.radOnesOut.TabIndex = 16;
+            this.radOnesOut.TabStop = true;
+            this.radOnesOut.Text = "One\'s Complement";
+            this.radOnesOut.UseVisualStyleBackColor = true;
+            // 
+            // radDecimalOut
+            // 
+            this.radDecimalOut.AutoSize = true;
+            this.radDecimalOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radDecimalOut.Location = new System.Drawing.Point(0, 159);
+            this.radDecimalOut.Name = "radDecimalOut";
+            this.radDecimalOut.Size = new System.Drawing.Size(107, 29);
+            this.radDecimalOut.TabIndex = 18;
+            this.radDecimalOut.TabStop = true;
+            this.radDecimalOut.Text = "Decimal";
+            this.radDecimalOut.UseVisualStyleBackColor = true;
+            // 
+            // lblBeginConversion
+            // 
+            this.lblBeginConversion.AutoSize = true;
+            this.lblBeginConversion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeginConversion.Location = new System.Drawing.Point(503, 316);
+            this.lblBeginConversion.Name = "lblBeginConversion";
+            this.lblBeginConversion.Size = new System.Drawing.Size(236, 31);
+            this.lblBeginConversion.TabIndex = 21;
+            this.lblBeginConversion.Text = "Begin Conversion:";
+            // 
             // txtInputBinary
             // 
             this.txtInputBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputBinary.Location = new System.Drawing.Point(570, 187);
+            this.txtInputBinary.Location = new System.Drawing.Point(509, 170);
             this.txtInputBinary.Name = "txtInputBinary";
-            this.txtInputBinary.Size = new System.Drawing.Size(256, 31);
-            this.txtInputBinary.TabIndex = 18;
+            this.txtInputBinary.Size = new System.Drawing.Size(217, 31);
+            this.txtInputBinary.TabIndex = 22;
+            // 
+            // lvlYourInput
+            // 
+            this.lvlYourInput.AutoSize = true;
+            this.lvlYourInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlYourInput.Location = new System.Drawing.Point(503, 127);
+            this.lvlYourInput.Name = "lvlYourInput";
+            this.lvlYourInput.Size = new System.Drawing.Size(223, 31);
+            this.lvlYourInput.TabIndex = 23;
+            this.lvlYourInput.Text = "Input Your Value:";
+            // 
+            // txtOutputBinary
+            // 
+            this.txtOutputBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutputBinary.Location = new System.Drawing.Point(509, 588);
+            this.txtOutputBinary.Name = "txtOutputBinary";
+            this.txtOutputBinary.Size = new System.Drawing.Size(217, 31);
+            this.txtOutputBinary.TabIndex = 24;
+            // 
+            // radDecimal
+            // 
+            this.radDecimal.AutoSize = true;
+            this.radDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radDecimal.Location = new System.Drawing.Point(1, 159);
+            this.radDecimal.Name = "radDecimal";
+            this.radDecimal.Size = new System.Drawing.Size(107, 29);
+            this.radDecimal.TabIndex = 19;
+            this.radDecimal.TabStop = true;
+            this.radDecimal.Text = "Decimal";
+            this.radDecimal.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 344);
+            this.ClientSize = new System.Drawing.Size(743, 636);
+            this.Controls.Add(this.txtOutputBinary);
+            this.Controls.Add(this.lvlYourInput);
             this.Controls.Add(this.txtInputBinary);
-            this.Controls.Add(this.radSigned);
-            this.Controls.Add(this.radOnesComp);
-            this.Controls.Add(this.radTwosComp);
-            this.Controls.Add(this.radUnsigned);
-            this.Controls.Add(this.lblAnswer);
+            this.Controls.Add(this.lblBeginConversion);
+            this.Controls.Add(this.grpOutput);
+            this.Controls.Add(this.grpInput);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.lblYourAnswer);
             this.Controls.Add(this.lblConvert);
@@ -191,6 +321,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.grpInput.ResumeLayout(false);
+            this.grpInput.PerformLayout();
+            this.grpOutput.ResumeLayout(false);
+            this.grpOutput.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,12 +339,22 @@
         private System.Windows.Forms.Label lblYourAnswer;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Label lblOutput;
-        private System.Windows.Forms.Label lblAnswer;
         private System.Windows.Forms.RadioButton radUnsigned;
         private System.Windows.Forms.RadioButton radTwosComp;
         private System.Windows.Forms.RadioButton radOnesComp;
         private System.Windows.Forms.RadioButton radSigned;
+        private System.Windows.Forms.GroupBox grpInput;
+        private System.Windows.Forms.GroupBox grpOutput;
+        private System.Windows.Forms.RadioButton radUnsignedOut;
+        private System.Windows.Forms.RadioButton radTwosOut;
+        private System.Windows.Forms.RadioButton radSignedOut;
+        private System.Windows.Forms.RadioButton radOnesOut;
+        private System.Windows.Forms.RadioButton radDecimalOut;
+        private System.Windows.Forms.Label lblBeginConversion;
         private System.Windows.Forms.TextBox txtInputBinary;
+        private System.Windows.Forms.Label lvlYourInput;
+        private System.Windows.Forms.TextBox txtOutputBinary;
+        private System.Windows.Forms.RadioButton radDecimal;
     }
 }
 

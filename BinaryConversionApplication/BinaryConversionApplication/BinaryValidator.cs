@@ -11,7 +11,21 @@ namespace BinaryConversionApplication
         // Method to ensure user has entered valid data
         public bool ValidateUserInput(string input)
         {
-            return true; // Come back to this method later
+            if (input.Length == 8)
+            {
+                // 8 bit binary input
+                return true;
+            } 
+            else if (input.Length == 4)
+            {
+                // 4 bit binary input
+                return true;
+            }
+            else
+            {
+                // invalid input
+                return false;
+            }
         }
     }
 }
