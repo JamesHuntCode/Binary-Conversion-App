@@ -32,7 +32,7 @@ namespace BinaryConversionApplication
         // Method to check value input by user is binary
         private bool isBinary(string input)
         {
-            var values = input.ToCharArray();
+            char[] values = input.ToCharArray();
 
             // Check value is binary
             for (int i = 0; i < values.Length; i++)
@@ -45,7 +45,6 @@ namespace BinaryConversionApplication
             }
             // Value is binary
             return true;
-
         }
     }
 }

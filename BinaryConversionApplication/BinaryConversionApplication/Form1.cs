@@ -34,18 +34,34 @@ namespace BinaryConversionApplication
             // Get user input
             string userInput = this.getUserInput();
             
-
-            // Validate the input
-            if (myValidator.ValidateUserInput(userInput))
+            // Only run binary validations if actually converting from a binary value (eg. not a decimal)
+            if (!this.radDecimal.Checked)
             {
-                // Input is valid - continue
-                //RawBinaryInput userBinaryInput = new RawBinaryInput(userInput);
-                MessageBox.Show("SUCCESS");
+                // Validate the binary input
+                if (myValidator.ValidateUserInput(userInput))
+                {
+                    // Input is valid - continue
+                    
+                }
+                else
+                {
+                    // Input is not valid - stop
+                    MessageBox.Show(text: "Oops! Please make sure you input either an 8 bit or a 4 bit binary value or, alternatively, a decimal value. Please try again.");
+                }
             }
             else
             {
-                // Input is not valid - stop
-                MessageBox.Show("Oops! Please make sure you input either an 8 bit or a 4 bit binary value or, alternatively, a decimal value. Please try again.");
+                int userInputValue;
+
+                // Validate decimal input
+                if (int.TryParse(userInput, out userInputValue))
+                {
+                    // Functional - come back here when ready
+                }
+                else
+                {
+                    MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
+                }
             }
         }
 
