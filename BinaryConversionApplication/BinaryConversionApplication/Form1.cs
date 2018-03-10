@@ -23,7 +23,7 @@ namespace BinaryConversionApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             // Prepare form / check default values
-            
+            this.txtOutputBinary.ReadOnly = true;
             this.radUnsigned.Checked = true;
             this.radDecimalOut.Checked = true;
         }
@@ -39,12 +39,13 @@ namespace BinaryConversionApplication
             if (myValidator.ValidateUserInput(userInput))
             {
                 // Input is valid - continue
-                RawBinaryInput userBinaryInput = new RawBinaryInput(userInput);
-                
+                //RawBinaryInput userBinaryInput = new RawBinaryInput(userInput);
+                MessageBox.Show("SUCCESS");
             }
             else
             {
                 // Input is not valid - stop
+                MessageBox.Show("Oops! Please make sure you input either an 8 bit or a 4 bit binary value or, alternatively, a decimal value. Please try again.");
             }
         }
 
