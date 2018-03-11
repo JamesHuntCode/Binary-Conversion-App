@@ -12,8 +12,9 @@ namespace BinaryConversionApplication
 {
     public partial class Form1 : Form
     {
-        // Custom class coded to validate user inputs
+        // Custom classes coded to validate & convert user inputs
         private BinaryValidator myValidator = new BinaryValidator();
+        private BinaryConverter myConverter = new BinaryConverter();
 
         public Form1()
         {
@@ -33,6 +34,25 @@ namespace BinaryConversionApplication
         {
             // Get user input
             string userInput = this.getUserInput();
+            string validatedBinaryInput;
+
+            // Get starting representation type
+            bool fromUnisgned, fromSigned, fromOnes, fromTwos, fromDecimal;
+
+            fromUnisgned = this.radUnsigned.Checked;
+            fromSigned = this.radSigned.Checked;
+            fromOnes = this.radOnesComp.Checked;
+            fromTwos = this.radTwosComp.Checked;
+            fromDecimal = this.radDecimal.Checked;
+
+            // Get ending representation type
+            bool toUnsigned, toSigned, toOnes, toTwos, toDecimal;
+
+            toUnsigned = this.radUnsignedOut.Checked;
+            toSigned = this.radSignedOut.Checked;
+            toOnes = this.radOnesOut.Checked;
+            toTwos = this.radTwosOut.Checked;
+            toDecimal = this.radDecimalOut.Checked;
             
             // Only run binary validations if actually converting from a binary value (eg. not a decimal)
             if (!this.radDecimal.Checked)
@@ -41,7 +61,7 @@ namespace BinaryConversionApplication
                 if (myValidator.ValidateUserInput(userInput))
                 {
                     // Input is valid - continue
-                    
+                    validatedBinaryInput = userInput;
                 }
                 else
                 {
@@ -80,6 +100,11 @@ namespace BinaryConversionApplication
             }
 
             return userInput;
+        }
+
+        private string[] getConversionParams()
+        {
+            return new string[] { "from", "to" };
         }
     }
 }
