@@ -36,24 +36,6 @@ namespace BinaryConversionApplication
             string userInput = this.getUserInput();
             string validatedBinaryInput;
 
-            // Get starting representation type
-            bool fromUnisgned, fromSigned, fromOnes, fromTwos, fromDecimal;
-
-            fromUnisgned = this.radUnsigned.Checked;
-            fromSigned = this.radSigned.Checked;
-            fromOnes = this.radOnesComp.Checked;
-            fromTwos = this.radTwosComp.Checked;
-            fromDecimal = this.radDecimal.Checked;
-
-            // Get ending representation type
-            bool toUnsigned, toSigned, toOnes, toTwos, toDecimal;
-
-            toUnsigned = this.radUnsignedOut.Checked;
-            toSigned = this.radSignedOut.Checked;
-            toOnes = this.radOnesOut.Checked;
-            toTwos = this.radTwosOut.Checked;
-            toDecimal = this.radDecimalOut.Checked;
-            
             // Only run binary validations if actually converting from a binary value (eg. not a decimal)
             if (!this.radDecimal.Checked)
             {
@@ -62,6 +44,9 @@ namespace BinaryConversionApplication
                 {
                     // Input is valid - continue
                     validatedBinaryInput = userInput;
+
+                    // Get conversion type
+                    string[] conversionParamaters = this.getConversionParams();
                 }
                 else
                 {
@@ -102,9 +87,53 @@ namespace BinaryConversionApplication
             return userInput;
         }
 
+        // Method to indicate what the user is coverting from & to
         private string[] getConversionParams()
         {
-            return new string[] { "from", "to" };
+            return new string[] { this.getConvertingFrom(), this.getConvertingTo() };
+        }
+
+        // Method to get what the user is converting from
+        private string getConvertingFrom()
+        {
+            if (this.radUnsigned.Checked)
+            {
+                return "unsigned";
+            }
+            else if (this.radSigned.Checked)
+            {
+                return "signed";
+            }
+            else if (this.radOnesComp.Checked)
+            {
+                return "ones-complement";
+            }
+            else
+            {
+                return "twos-complement";
+            }
+            
+        }
+
+        // Method to get what the user is converting to
+        private string getConvertingTo()
+        {
+            if (this.radUnsignedOut.Checked)
+            {
+                return "unsigned";
+            }
+            else if (this.radSignedOut.Checked)
+            {
+                return "signed";
+            }
+            else if (this.radOnesOut.Checked)
+            {
+                return "ones-complement";
+            }
+            else 
+            {
+                return "twos-complement";
+            }
         }
     }
 }
