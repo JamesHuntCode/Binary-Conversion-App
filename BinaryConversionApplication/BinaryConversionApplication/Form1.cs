@@ -52,10 +52,10 @@ namespace BinaryConversionApplication
                     convertingTo = conversionParamaters[1];
 
                     // Create new binary object
-                    RawBinaryInput newInput = this.createNewBinary(convertingFrom);
+                    BinaryValue newInput = this.createNewBinary(convertingFrom);
                     newInput.Value = validatedBinaryInput;
 
-                    
+                    // <-- BEGIN CONVERTING HERE -->
                     
                 }
                 else
@@ -76,6 +76,7 @@ namespace BinaryConversionApplication
                 else
                 {
                     MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
+                    this.txtInputBinary.Text = ""; // Reset text field
                 }
             }
         }
@@ -151,9 +152,9 @@ namespace BinaryConversionApplication
         }
 
         // Method to create a new binary value which can be manipulated
-        private RawBinaryInput createNewBinary(string convertingFrom)
+        private BinaryValue createNewBinary(string convertingFrom)
         {
-            RawBinaryInput demoValue = new RawBinaryInput();
+            BinaryValue demoValue = new BinaryValue();
 
             // Set values of the user's input type
             switch (convertingFrom)
@@ -172,6 +173,11 @@ namespace BinaryConversionApplication
                     break;
             }
             return demoValue;
+        }
+
+        private BinaryValue convertBinaryValues(string convertTo)
+        {
+            return new BinaryValue();
         }
     }
 }

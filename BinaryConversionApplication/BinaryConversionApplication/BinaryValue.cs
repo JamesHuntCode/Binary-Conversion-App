@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryConversionApplication
 {
-    public class RawBinaryInput
+    public class BinaryValue
     {
         public string Value { get; set; }
         public bool IsUnsigned { get; set; } = false;
@@ -14,7 +14,7 @@ namespace BinaryConversionApplication
         public bool IsOnesComplement { get; set; } = false;
         public bool IsTwosComplement { get; set; } = false;
 
-        public RawBinaryInput()
+        public BinaryValue()
         {
 
         }
