@@ -47,6 +47,8 @@ namespace BinaryConversionApplication
 
                     // Get conversion type
                     string[] conversionParamaters = this.getConversionParams();
+
+                    // <---- BEGIN CONVERSION HERE ----> 
                 }
                 else
                 {
