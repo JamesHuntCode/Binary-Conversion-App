@@ -47,8 +47,24 @@ namespace BinaryConversionApplication
 
                     // Get conversion type
                     string[] conversionParamaters = this.getConversionParams();
+                    string convertingFrom, convertingTo;
+                    convertingFrom = conversionParamaters[0];
+                    convertingTo = conversionParamaters[1];
 
-                    // <---- BEGIN CONVERSION HERE ----> 
+                    RawBinaryInput newInput = new RawBinaryInput();
+
+                    // Set values of the user's input type
+                    switch (convertingFrom)
+                    {
+
+                    }
+
+                    // Set values of user's desired output type
+                    switch (convertingTo)
+                    {
+
+                    }
+                    
                 }
                 else
                 {
@@ -136,6 +152,12 @@ namespace BinaryConversionApplication
             {
                 return "twos-complement";
             }
+        }
+
+        // Method to create a new binary value which can be manipulated
+        private RawBinaryInput setBinaryValues()
+        {
+            return new RawBinaryInput();
         }
     }
 }

@@ -23,7 +23,21 @@ namespace BinaryConversionApplication
         // Method to convert user input into a one's complement binary number
         public string ConvertToOnesComplement(string input)
         {
-            return "";
+            char[] binaryValue = input.ToCharArray();
+
+            for (int i = 0; i < binaryValue.Length; i++)
+            {
+                if (binaryValue[i].Equals('0'))
+                {
+                    binaryValue[i] = '1';
+                }
+                else
+                {
+                    binaryValue[i] = '0';
+                }
+            }
+
+            return binaryValue.ToString();
         }
 
         // Method to convert user input into a two's complement binary number
