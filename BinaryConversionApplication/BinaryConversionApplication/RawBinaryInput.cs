@@ -9,10 +9,10 @@ namespace BinaryConversionApplication
     public class RawBinaryInput
     {
         public string Value { get; set; }
-        public bool IsUnsigned { get; set; }
-        public bool IsSigned { get; set; }
-        public bool IsOnesComplement { get; set; }
-        public bool IsTwosComplement { get; set; }
+        public bool IsUnsigned { get; set; } = false;
+        public bool IsSigned { get; set; } = false;
+        public bool IsOnesComplement { get; set; } = false;
+        public bool IsTwosComplement { get; set; } = false;
 
         public RawBinaryInput()
         {

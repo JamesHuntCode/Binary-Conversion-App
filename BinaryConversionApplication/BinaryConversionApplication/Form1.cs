@@ -51,19 +51,11 @@ namespace BinaryConversionApplication
                     convertingFrom = conversionParamaters[0];
                     convertingTo = conversionParamaters[1];
 
-                    RawBinaryInput newInput = new RawBinaryInput();
+                    // Create new binary object
+                    RawBinaryInput newInput = this.createNewBinary(convertingFrom);
+                    newInput.Value = validatedBinaryInput;
 
-                    // Set values of the user's input type
-                    switch (convertingFrom)
-                    {
-
-                    }
-
-                    // Set values of user's desired output type
-                    switch (convertingTo)
-                    {
-
-                    }
+                    
                     
                 }
                 else
@@ -148,16 +140,38 @@ namespace BinaryConversionApplication
             {
                 return "ones-complement";
             }
-            else 
+            else if (this.radTwosOut.Checked)
             {
                 return "twos-complement";
+            }
+            else
+            {
+                return "decimal";
             }
         }
 
         // Method to create a new binary value which can be manipulated
-        private RawBinaryInput setBinaryValues()
+        private RawBinaryInput createNewBinary(string convertingFrom)
         {
-            return new RawBinaryInput();
+            RawBinaryInput demoValue = new RawBinaryInput();
+
+            // Set values of the user's input type
+            switch (convertingFrom)
+            {
+                case "unsigned":
+                    demoValue.IsUnsigned = true;
+                    break;
+                case "signed":
+                    demoValue.IsSigned = true;
+                    break;
+                case "ones-complement":
+                    demoValue.IsOnesComplement = true;
+                    break;
+                case "twos-complement":
+                    demoValue.IsTwosComplement = true;
+                    break;
+            }
+            return demoValue;
         }
     }
 }
