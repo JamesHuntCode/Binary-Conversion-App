@@ -56,7 +56,8 @@ namespace BinaryConversionApplication
                     newInput.Value = validatedBinaryInput;
 
                     // <-- BEGIN CONVERTING HERE -->
-                    
+                    newInput.Value = this.convertBinaryValue("ones-complement", newInput);    
+
                 }
                 else
                 {
@@ -175,9 +176,27 @@ namespace BinaryConversionApplication
             return demoValue;
         }
 
-        private BinaryValue convertBinaryValues(string convertTo)
+        private string convertBinaryValue(string convertTo, BinaryValue originalValue)
         {
-            return new BinaryValue();
+            switch (convertTo)
+            {
+                case "unsigned":
+
+                    break;
+                case "signed":
+
+                    break;
+                case "ones-complement":
+
+                    break;
+                case "twos-complement":
+
+                    break;
+                case "decimal":
+
+                    break;
+            }
+            return "";
         }
     }
 }
