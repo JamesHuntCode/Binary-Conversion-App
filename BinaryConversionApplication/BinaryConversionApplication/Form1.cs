@@ -47,7 +47,9 @@ namespace BinaryConversionApplication
 
                     // Get conversion type
                     string[] conversionParamaters = this.getConversionParams();
+
                     string convertingFrom, convertingTo;
+
                     convertingFrom = conversionParamaters[0];
                     convertingTo = conversionParamaters[1];
 
@@ -56,7 +58,9 @@ namespace BinaryConversionApplication
                     newInput.Value = validatedBinaryInput;
 
                     // <-- BEGIN CONVERTING HERE -->
-                    newInput.Value = this.convertBinaryValue("ones-complement", newInput);    
+                    newInput.Value = this.convertBinaryValue(convertingFrom, convertingTo, newInput.Value);
+
+                    
 
                 }
                 else
@@ -176,8 +180,13 @@ namespace BinaryConversionApplication
             return demoValue;
         }
 
-        private string convertBinaryValue(string convertTo, BinaryValue originalValue)
+        // Method to invoke conversion methods and return correct conversion value
+        private string convertBinaryValue(string repType, string convertTo, string originalValue)
         {
+            string convertedBinaryValue = "";
+            string representation = repType;
+
+            // Determine what the user is comverting to / call correct method
             switch (convertTo)
             {
                 case "unsigned":
@@ -196,7 +205,7 @@ namespace BinaryConversionApplication
 
                     break;
             }
-            return "";
+            return convertedBinaryValue;
         }
     }
 }
