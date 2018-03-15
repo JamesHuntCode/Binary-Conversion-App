@@ -13,8 +13,8 @@ namespace BinaryConversionApplication
     public partial class Form1 : Form
     {
         // Custom classes coded to validate & convert user inputs
-        private BinaryValidator myValidator = new BinaryValidator();
-        private BinaryConverter myConverter = new BinaryConverter();
+        private BinaryValidator validator = new BinaryValidator();
+        private BinaryConverter converter = new BinaryConverter();
 
         public Form1()
         {
@@ -40,7 +40,7 @@ namespace BinaryConversionApplication
             if (!this.radDecimal.Checked)
             {
                 // Validate the binary input
-                if (myValidator.ValidateUserInput(userInput))
+                if (validator.ValidateUserInput(userInput))
                 {
                     // Input is valid - continue
                     validatedBinaryInput = userInput;
@@ -57,11 +57,10 @@ namespace BinaryConversionApplication
                     BinaryValue newInput = this.createNewBinary(convertingFrom);
                     newInput.Value = validatedBinaryInput;
 
-                    // <-- BEGIN CONVERTING HERE -->
+                    // Method called to invoke the correct conversion method
                     newInput.Value = this.convertBinaryValue(convertingFrom, convertingTo, newInput.Value);
 
                     
-
                 }
                 else
                 {
@@ -183,25 +182,38 @@ namespace BinaryConversionApplication
         // Method to invoke conversion methods and return correct conversion value
         private string convertBinaryValue(string repType, string convertTo, string originalValue)
         {
+            string originalBinaryValue = originalValue;
+            string convertingFrom = repType;
+            string convertingInto = convertTo;
+
             string convertedBinaryValue = "";
-            string representation = repType;
 
             // Determine what the user is comverting to / call correct method
-            switch (convertTo)
+            switch (convertingInto)
             {
-                case "unsigned":
+                case "unsigned": // CONVERTING TO UNSIGNED BINARY
+
+                    convertedBinaryValue = this.converter.ConvertToUnsigned(originalBinaryValue, convertingFrom);
 
                     break;
-                case "signed":
+                case "signed": // CONVERTING TO SIGNED BINARY
+
+                    convertedBinaryValue = this.converter.ConvertToSigned(originalBinaryValue, convertingFrom);
 
                     break;
-                case "ones-complement":
+                case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
+
+                    convertedBinaryValue = this.converter.ConvertToOnesComplement(originalBinaryValue, convertingFrom);
 
                     break;
-                case "twos-complement":
+                case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
+
+                    convertedBinaryValue = this.converter.ConvertToTwosComplement(originalBinaryValue, convertingFrom);
 
                     break;
-                case "decimal":
+                case "decimal": // CONVERTING TO DECIMAL
+
+                    convertedBinaryValue = this.converter.ConvertToDecimal(originalBinaryValue, convertingFrom);
 
                     break;
             }

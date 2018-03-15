@@ -9,45 +9,31 @@ namespace BinaryConversionApplication
     public class BinaryConverter
     {
         // Method to convert user input into an unsigned binary number
-        public string ConvertToUnsigned(string input)
+        public string ConvertToUnsigned(string input, string repType)
         {
             return "";
         }
 
         // Method to convert user input into a signed binary number
-        public string ConvertToSigned(string input)
+        public string ConvertToSigned(string input, string repType)
         {
             return "";
         }
 
         // Method to convert user input into a one's complement binary number
-        public string ConvertToOnesComplement(string input)
+        public string ConvertToOnesComplement(string input, string repType)
         {
-            char[] binaryValue = input.ToCharArray();
-
-            for (int i = 0; i < binaryValue.Length; i++)
-            {
-                if (binaryValue[i].Equals('0'))
-                {
-                    binaryValue[i] = '1';
-                }
-                else
-                {
-                    binaryValue[i] = '0';
-                }
-            }
-
-            return binaryValue.ToString();
+            return "";
         }
 
         // Method to convert user input into a two's complement binary number
-        public string ConvertToTwosComplement(string input)
+        public string ConvertToTwosComplement(string input, string repType)
         {
             return "";
         }
 
         // Method to convert user input into a decimal number
-        public string ConvertToDecimal(string input)
+        public string ConvertToDecimal(string input, string repType)
         {
             return "";
         }
