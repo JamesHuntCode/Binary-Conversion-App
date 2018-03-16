@@ -34,11 +34,11 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-                    if (input.ToCharArray()[0].Equals('0')) // If begins with 0, is an unsigned integer
+                    if (input.ToCharArray()[0].Equals('0')) 
                     {
                         convertedValue = this.fromUnsignedToOnesComplement(input);
                     }
-                    else // Is negative value (signed integer)
+                    else 
                     {
                         convertedValue = this.fromSignedToOnesComplement(input);
                     }
@@ -78,7 +78,7 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
-
+                    convertedValue = this.fromUnsignedToDecimal(input);
 
                     break;
                 case "signed":
@@ -165,7 +165,46 @@ namespace BinaryConversionApplication
 
         private string fromUnsignedToDecimal(string input)
         {
-            return "";
+            Dictionary<int, char> binaryValues = new Dictionary<int, char>();
+
+            char[] inputValue = input.ToCharArray();
+
+            string convertedValue = "";
+
+            if (input.Length == 4) // 4 bit value
+            {
+                binaryValues.Add(8, inputValue[0]);
+                binaryValues.Add(4, inputValue[1]);
+                binaryValues.Add(2, inputValue[2]);
+                binaryValues.Add(1, inputValue[3]);
+
+                int sum = 0;
+
+                foreach (KeyValuePair<int, char> binaryPosition in binaryValues)
+                {
+                    if (binaryPosition.Value.Equals('1'))
+                    {
+                        sum += binaryPosition.Key;
+                    }
+                }
+
+                convertedValue = Convert.ToString(sum);
+
+                binaryValues.Clear();
+            }
+            else // 8 bit value
+            {
+                binaryValues.Add(128, inputValue[0]);
+                binaryValues.Add(64, inputValue[1]);
+                binaryValues.Add(32, inputValue[2]);
+                binaryValues.Add(16, inputValue[3]);
+                binaryValues.Add(8, inputValue[4]);
+                binaryValues.Add(4, inputValue[5]);
+                binaryValues.Add(2, inputValue[6]);
+                binaryValues.Add(1, inputValue[7]);
+            }
+
+            return convertedValue;
         }
 
         private string fromSignedToDecimal(string input)
