@@ -29,7 +29,21 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
+                    char[] valueBreakdown = input.ToCharArray();
 
+                    for (int i = 0; i < valueBreakdown.Length; i++)
+                    {
+                        if (valueBreakdown[i].Equals('0'))
+                        {
+                            valueBreakdown[i] = '1';
+                        }
+                        else
+                        {
+                            valueBreakdown[i] = '0';
+                        }
+                    }
+
+                    convertedValue = new String(valueBreakdown);
 
                     break;
                 case "signed":
