@@ -22,8 +22,34 @@ namespace BinaryConversionApplication
 
         // Method to convert user input into a one's complement binary number
         public string ConvertToOnesComplement(string input, string repType)
-        {
-            return "";
+        { 
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+
+
+                    break;
+                case "signed":
+
+
+
+                    break;
+                case "ones-complement":
+
+                    convertedValue = input;
+
+                    break;
+                case "twos-complement":
+
+
+
+                    break;
+            }
+
+            return convertedValue;
         }
 
         // Method to convert user input into a two's complement binary number
@@ -35,7 +61,25 @@ namespace BinaryConversionApplication
         // Method to convert user input into a decimal number
         public string ConvertToDecimal(string input, string repType)
         {
-            return "";
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+                    break;
+                case "signed":
+
+                    break;
+                case "ones-complement":
+
+                    break;
+                case "twos-complement":
+
+                    break;
+            }
+
+            return convertedValue;
         }
     }
 }

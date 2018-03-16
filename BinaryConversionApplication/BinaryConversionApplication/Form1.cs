@@ -60,7 +60,8 @@ namespace BinaryConversionApplication
                     // Method called to invoke the correct conversion method
                     newInput.Value = this.convertBinaryValue(convertingFrom, convertingTo, newInput.Value);
 
-                    
+                    // Output converted value
+                    this.txtOutputBinary.Text = newInput.Value;
                 }
                 else
                 {
