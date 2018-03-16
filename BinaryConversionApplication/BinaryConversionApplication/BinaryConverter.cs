@@ -119,7 +119,11 @@ namespace BinaryConversionApplication
 
         private string fromSignedToOnesComplement(string input)
         {
-            return "";
+            char[] valueBreakdown = input.ToCharArray();
+
+            // convert here
+
+            return new String(valueBreakdown);
         }
 
         private string fromTwosComplementToOnesComplement(string input)
@@ -132,7 +136,7 @@ namespace BinaryConversionApplication
             return "";
         }
 
-        // CONVERTING TO TWOS COMPLEMENT
+        // CONVERTING TO TWO'S COMPLEMENT
 
 
 
