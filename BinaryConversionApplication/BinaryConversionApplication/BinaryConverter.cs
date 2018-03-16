@@ -34,7 +34,14 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-
+                    if (input.ToCharArray()[0].Equals('0')) // If begins with 0, is an unsigned integer
+                    {
+                        convertedValue = this.fromUnsignedToOnesComplement(input);
+                    }
+                    else // Is negative value (signed integer)
+                    {
+                        // when conversion method complete - call from signedToOnesComplement() here
+                    }
 
                     break;
                 case "ones-complement":
@@ -72,14 +79,22 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
+
+
                     break;
                 case "signed":
+
+
 
                     break;
                 case "ones-complement":
 
+
+
                     break;
                 case "twos-complement":
+
+
 
                     break;
             }
