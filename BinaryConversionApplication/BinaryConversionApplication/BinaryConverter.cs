@@ -29,21 +29,7 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
-                    char[] valueBreakdown = input.ToCharArray();
-
-                    for (int i = 0; i < valueBreakdown.Length; i++)
-                    {
-                        if (valueBreakdown[i].Equals('0'))
-                        {
-                            valueBreakdown[i] = '1';
-                        }
-                        else
-                        {
-                            valueBreakdown[i] = '0';
-                        }
-                    }
-
-                    convertedValue = new String(valueBreakdown);
+                    convertedValue = this.fromUnsignedToOnesComplement(input);
 
                     break;
                 case "signed":
@@ -57,6 +43,11 @@ namespace BinaryConversionApplication
 
                     break;
                 case "twos-complement":
+
+
+
+                    break;
+                case "decimal":
 
 
 
@@ -95,5 +86,59 @@ namespace BinaryConversionApplication
 
             return convertedValue;
         }
+
+        /* INDIVIDUAL CONVERSION METHODS (INVOKED FROM METHODS ABOVE) */
+
+
+        // CONVERTING TO UNSIGNED
+
+
+        // CONVERTING TO SIGNED
+
+
+        // CONVERTING TO ONE'S COMPLEMENT
+
+        private string fromUnsignedToOnesComplement(string input)
+        {
+            char[] valueBreakdown = input.ToCharArray();
+
+            for (int i = 0; i < valueBreakdown.Length; i++)
+            {
+                if (valueBreakdown[i].Equals('0'))
+                {
+                    valueBreakdown[i] = '1';
+                }
+                else
+                {
+                    valueBreakdown[i] = '0';
+                }
+            }
+
+            return new String(valueBreakdown);
+        }
+
+        private string fromSignedToOnesComplement(string input)
+        {
+            return "";
+        }
+
+        private string fromTwosComplementToOnesComplement(string input)
+        {
+            return "";
+        }
+
+        private string fromDecimalToOnesComplement(string input)
+        {
+            return "";
+        }
+
+        // CONVERTING TO TWOS COMPLEMENT
+
+
+
+        // CONVERTING TO DECIMAL
+
+
+
     }
 }
