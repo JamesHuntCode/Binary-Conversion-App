@@ -189,8 +189,6 @@ namespace BinaryConversionApplication
                 }
 
                 convertedValue = Convert.ToString(sum);
-
-                binaryValues.Clear();
             }
             else // 8 bit value
             {
@@ -202,8 +200,22 @@ namespace BinaryConversionApplication
                 binaryValues.Add(4, inputValue[5]);
                 binaryValues.Add(2, inputValue[6]);
                 binaryValues.Add(1, inputValue[7]);
+
+                int sum = 0;
+
+                foreach (KeyValuePair<int, char> binaryPosition in binaryValues)
+                {
+                    if (binaryPosition.Value.Equals('1'))
+                    {
+                        sum += binaryPosition.Key;
+                    }
+                }
+
+                convertedValue = Convert.ToString(sum);
             }
 
+            // Clear previous values and return result
+            binaryValues.Clear();
             return convertedValue;
         }
 
