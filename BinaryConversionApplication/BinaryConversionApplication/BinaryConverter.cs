@@ -40,7 +40,7 @@ namespace BinaryConversionApplication
                     }
                     else // Is negative value (signed integer)
                     {
-                        // when conversion method complete - call from signedToOnesComplement() here
+                        convertedValue = this.fromSignedToOnesComplement(input);
                     }
 
                     break;
@@ -50,7 +50,6 @@ namespace BinaryConversionApplication
 
                     break;
                 case "twos-complement":
-
 
 
                     break;
@@ -136,7 +135,14 @@ namespace BinaryConversionApplication
         {
             char[] valueBreakdown = input.ToCharArray();
 
-            // convert here
+            if (valueBreakdown.Length == 4) // 4 bit value
+            {
+
+            }
+            else // 8 bit value
+            {
+
+            }
 
             return new String(valueBreakdown);
         }
@@ -157,7 +163,24 @@ namespace BinaryConversionApplication
 
         // CONVERTING TO DECIMAL
 
+        private string fromUnsignedToDecimal(string input)
+        {
+            return "";
+        }
 
+        private string fromSignedToDecimal(string input)
+        {
+            return "";
+        }
 
+        private string fromOnesComplementToDecimal(string input)
+        {
+            return "";
+        }
+
+        private string fromTwosComplementToDecimal(string input)
+        {
+            return "";
+        }
     }
 }
