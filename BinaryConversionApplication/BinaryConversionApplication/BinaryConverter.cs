@@ -244,7 +244,7 @@ namespace BinaryConversionApplication
             return "";
         }
 
-        // MATHEMATICAL OPERATIONS USED IN ABOVE METHODS
+        // OPERATIONS USED IN ABOVE METHODS
         
         // Method used to get sum of binary value
         private int getBinarySum(Dictionary<int, char> values)

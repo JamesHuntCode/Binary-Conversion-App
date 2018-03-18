@@ -29,60 +29,80 @@ namespace BinaryConversionApplication
             this.radDecimalOut.Checked = true;
         }
 
-        
+        // Main method (where all the *magic* happens)
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            // Get user input
             string userInput = this.getUserInput();
-            string validatedBinaryInput;
 
-            // Only run binary validations if actually converting from a binary value (eg. not a decimal)
-            if (!this.radDecimal.Checked)
+            // Run initial validation
+            if (this.runBaseValidations(userInput.Length))
             {
-                // Validate the binary input
-                if (validator.ValidateUserInput(userInput))
+                string validatedBinaryInput;
+
+                // Run further validations
+                if (!this.radDecimal.Checked)
                 {
-                    validatedBinaryInput = userInput;
+                    // Validate the binary input
+                    if (validator.ValidateUserInput(userInput))
+                    {
+                        validatedBinaryInput = userInput;
 
-                    // Get conversion type
-                    string[] conversionParamaters = this.getConversionParams();
+                        // Get conversion type
+                        string[] conversionParamaters = this.getConversionParams();
 
-                    string convertingFrom, convertingTo;
+                        string convertingFrom, convertingTo;
 
-                    convertingFrom = conversionParamaters[0];
-                    convertingTo = conversionParamaters[1];
+                        convertingFrom = conversionParamaters[0];
+                        convertingTo = conversionParamaters[1];
 
-                    // Create new binary object
-                    BinaryValue newInput = this.createNewBinary(convertingFrom);
-                    newInput.Value = validatedBinaryInput;
+                        // Create new binary object
+                        BinaryValue newInput = this.createNewBinary(convertingFrom);
+                        newInput.Value = validatedBinaryInput;
 
-                    // Method called to invoke the correct conversion method
-                    newInput.Value = this.convertBinaryValue(convertingFrom, convertingTo, newInput.Value);
+                        newInput.Value = this.convertBinaryValue(convertingFrom, convertingTo, newInput.Value);
 
-                    // Output converted value
-                    this.txtOutputBinary.Text = newInput.Value;
+                        // Output converted value
+                        this.txtOutputBinary.Text = newInput.Value;
+                    }
+                    else
+                    {
+                        // Input is not valid - stop
+                        MessageBox.Show(text: "Oops! Double check your input. Please try again.");
+                        this.txtInputBinary.Text = ""; // Reset text field
+                    }
                 }
                 else
                 {
-                    // Input is not valid - stop
-                    MessageBox.Show(text: "Oops! Double check your input. Please try again.");
-                    this.txtInputBinary.Text = ""; // Reset text field
+                    int userInputValue;
+
+                    // Validate decimal input
+                    if (int.TryParse(userInput, out userInputValue))
+                    {
+                        // Functional - come back here when ready
+                    }
+                    else
+                    {
+                        MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
+                        this.txtInputBinary.Text = ""; // Reset text field
+                    }
                 }
             }
             else
             {
-                int userInputValue;
+                MessageBox.Show(text: "Oops! Double check your input. Please try again.");
+            }
+        }
 
-                // Validate decimal input
-                if (int.TryParse(userInput, out userInputValue))
-                {
-                    // Functional - come back here when ready
-                }
-                else
-                {
-                    MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
-                    this.txtInputBinary.Text = ""; // Reset text field
-                }
+        // Method used to ensure length of user's input complies with representation style chosen
+        private bool runBaseValidations(int inputLength)
+        {
+            if (((this.radSigned.Checked) || (this.radOnesComp.Checked) || (this.radTwosComp.Checked)) && (inputLength == 4))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
