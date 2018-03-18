@@ -83,7 +83,7 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-
+                    convertedValue = this.fromSignedToDecimal(input);
 
                     break;
                 case "ones-complement":
@@ -133,18 +133,7 @@ namespace BinaryConversionApplication
 
         private string fromSignedToOnesComplement(string input)
         {
-            char[] valueBreakdown = input.ToCharArray();
-
-            if (valueBreakdown.Length == 4) // 4 bit value
-            {
-
-            }
-            else // 8 bit value
-            {
-
-            }
-
-            return new String(valueBreakdown);
+            return "";
         }
 
         private string fromTwosComplementToOnesComplement(string input)
@@ -163,6 +152,7 @@ namespace BinaryConversionApplication
 
         // CONVERTING TO DECIMAL
 
+        // Method to convert unsigned binary values to decimal
         private string fromUnsignedToDecimal(string input)
         {
             Dictionary<int, char> binaryValues = new Dictionary<int, char>();
@@ -171,27 +161,22 @@ namespace BinaryConversionApplication
 
             string convertedValue = "";
 
-            if (input.Length == 4) // 4 bit value
+            if (input.Length == 4)
             {
+                // COME BACK TO CLEAN THIS UP ------------
                 binaryValues.Add(8, inputValue[0]);
                 binaryValues.Add(4, inputValue[1]);
                 binaryValues.Add(2, inputValue[2]);
                 binaryValues.Add(1, inputValue[3]);
+                // ---------------------------------------
 
-                int sum = 0;
-
-                foreach (KeyValuePair<int, char> binaryPosition in binaryValues)
-                {
-                    if (binaryPosition.Value.Equals('1'))
-                    {
-                        sum += binaryPosition.Key;
-                    }
-                }
+                int sum = this.getBinarySum(binaryValues);
 
                 convertedValue = Convert.ToString(sum);
             }
-            else // 8 bit value
+            else
             {
+                // COME BACK TO CLEAN THIS UP ------------
                 binaryValues.Add(128, inputValue[0]);
                 binaryValues.Add(64, inputValue[1]);
                 binaryValues.Add(32, inputValue[2]);
@@ -200,16 +185,9 @@ namespace BinaryConversionApplication
                 binaryValues.Add(4, inputValue[5]);
                 binaryValues.Add(2, inputValue[6]);
                 binaryValues.Add(1, inputValue[7]);
+                // ---------------------------------------
 
-                int sum = 0;
-
-                foreach (KeyValuePair<int, char> binaryPosition in binaryValues)
-                {
-                    if (binaryPosition.Value.Equals('1'))
-                    {
-                        sum += binaryPosition.Key;
-                    }
-                }
+                int sum = this.getBinarySum(binaryValues);
 
                 convertedValue = Convert.ToString(sum);
             }
@@ -219,19 +197,69 @@ namespace BinaryConversionApplication
             return convertedValue;
         }
 
+        // Method to convert signed binary values to decimal
         private string fromSignedToDecimal(string input)
-        {
-            return "";
+        { 
+            Dictionary<int, char> binaryValues = new Dictionary<int, char>();
+
+            char[] inputValue = input.ToCharArray();
+
+            bool isPositive = inputValue[0].Equals('0');
+
+            string convertedValue = "";
+
+            if (isPositive)
+            {
+                convertedValue = this.fromUnsignedToDecimal(input);
+            }
+            else
+            {
+                binaryValues.Add(64, inputValue[1]);
+                binaryValues.Add(32, inputValue[2]);
+                binaryValues.Add(16, inputValue[3]);
+                binaryValues.Add(8, inputValue[4]);
+                binaryValues.Add(4, inputValue[5]);
+                binaryValues.Add(2, inputValue[6]);
+                binaryValues.Add(1, inputValue[7]);
+
+                int sum = this.getBinarySum(binaryValues);
+
+                convertedValue = "-" + Convert.ToString(sum);
+            }
+
+            // Clear previous values and return result
+            binaryValues.Clear();
+            return convertedValue;
         }
 
+        // Method to convert one's complement binary values to decimal
         private string fromOnesComplementToDecimal(string input)
         {
             return "";
         }
 
+        // Method to convert two's complement binary values to decimal
         private string fromTwosComplementToDecimal(string input)
         {
             return "";
+        }
+
+        // MATHEMATICAL OPERATIONS USED IN ABOVE METHODS
+        
+        // Method used to get sum of binary value
+        private int getBinarySum(Dictionary<int, char> values)
+        {
+            int sum = 0;
+
+            foreach (KeyValuePair<int, char> binaryPosition in values)
+            {
+                if (binaryPosition.Value.Equals('1'))
+                {
+                    sum += binaryPosition.Key;
+                }
+            }
+
+            return sum;
         }
     }
 }

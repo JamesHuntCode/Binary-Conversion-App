@@ -42,7 +42,6 @@ namespace BinaryConversionApplication
                 // Validate the binary input
                 if (validator.ValidateUserInput(userInput))
                 {
-                    // Input is valid - continue
                     validatedBinaryInput = userInput;
 
                     // Get conversion type
@@ -66,7 +65,8 @@ namespace BinaryConversionApplication
                 else
                 {
                     // Input is not valid - stop
-                    MessageBox.Show(text: "Oops! Please make sure you input either an 8 bit or a 4 bit binary value or, alternatively, a decimal value. Please try again.");
+                    MessageBox.Show(text: "Oops! Double check your input. Please try again.");
+                    this.txtInputBinary.Text = ""; // Reset text field
                 }
             }
             else
