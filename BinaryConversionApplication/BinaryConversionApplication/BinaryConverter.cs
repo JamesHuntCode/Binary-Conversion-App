@@ -163,12 +163,14 @@ namespace BinaryConversionApplication
 
             if (input.Length == 4)
             {
-                // COME BACK TO CLEAN THIS UP ------------
-                binaryValues.Add(8, inputValue[0]);
-                binaryValues.Add(4, inputValue[1]);
-                binaryValues.Add(2, inputValue[2]);
-                binaryValues.Add(1, inputValue[3]);
-                // ---------------------------------------
+                int startingBinary = 8;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    binaryValues.Add(startingBinary, inputValue[i]);
+
+                    startingBinary /= 2;
+                }
 
                 int sum = this.getBinarySum(binaryValues);
 
@@ -176,16 +178,14 @@ namespace BinaryConversionApplication
             }
             else
             {
-                // COME BACK TO CLEAN THIS UP ------------
-                binaryValues.Add(128, inputValue[0]);
-                binaryValues.Add(64, inputValue[1]);
-                binaryValues.Add(32, inputValue[2]);
-                binaryValues.Add(16, inputValue[3]);
-                binaryValues.Add(8, inputValue[4]);
-                binaryValues.Add(4, inputValue[5]);
-                binaryValues.Add(2, inputValue[6]);
-                binaryValues.Add(1, inputValue[7]);
-                // ---------------------------------------
+                int startingBinary = 128;
+
+                for (int i = 0; i < 8; i++)
+                {
+                    binaryValues.Add(startingBinary, inputValue[i]);
+
+                    startingBinary /= 2;
+                }
 
                 int sum = this.getBinarySum(binaryValues);
 
@@ -214,13 +214,14 @@ namespace BinaryConversionApplication
             }
             else
             {
-                binaryValues.Add(64, inputValue[1]);
-                binaryValues.Add(32, inputValue[2]);
-                binaryValues.Add(16, inputValue[3]);
-                binaryValues.Add(8, inputValue[4]);
-                binaryValues.Add(4, inputValue[5]);
-                binaryValues.Add(2, inputValue[6]);
-                binaryValues.Add(1, inputValue[7]);
+                int startingBinary = 64;
+
+                for (int i = 0; i < 7; i++)
+                {
+                    binaryValues.Add(startingBinary, inputValue[i + 1]);
+
+                    startingBinary /= 2;
+                }
 
                 int sum = this.getBinarySum(binaryValues);
 
