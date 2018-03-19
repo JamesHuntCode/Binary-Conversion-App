@@ -34,14 +34,7 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-                    if (input.ToCharArray()[0].Equals('0')) 
-                    {
-                        convertedValue = this.fromUnsignedToOnesComplement(input);
-                    }
-                    else 
-                    {
-                        convertedValue = this.fromSignedToOnesComplement(input);
-                    }
+                    convertedValue = this.fromSignedToOnesComplement(input);
 
                     break;
                 case "ones-complement":
