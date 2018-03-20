@@ -29,7 +29,7 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
-                    convertedValue = this.fromUnsignedToOnesComplement(input);
+                    convertedValue = this.invertBitValues(input);
 
                     break;
                 case "signed":
@@ -81,7 +81,7 @@ namespace BinaryConversionApplication
                     break;
                 case "ones-complement":
 
-
+                    convertedValue = this.fromOnesComplementToDecimal(input);
 
                     break;
                 case "twos-complement":
@@ -101,11 +101,12 @@ namespace BinaryConversionApplication
 
 
         // CONVERTING TO SIGNED
-
+        
 
         // CONVERTING TO ONE'S COMPLEMENT
 
-        private string fromUnsignedToOnesComplement(string input)
+        // Method to convert from an unsigned binary value to one's complement
+        private string invertBitValues(string input)
         {
             char[] valueBreakdown = input.ToCharArray();
 
@@ -124,17 +125,20 @@ namespace BinaryConversionApplication
             return new String(valueBreakdown);
         }
 
+        // Method to convert from a signed binary value to one's complement
         private string fromSignedToOnesComplement(string input)
         {
             return "";
         }
 
-        private string fromTwosComplementToOnesComplement(string input)
+        // Method to convert from a decimal value to one's complement binary
+        private string fromDecimalToOnesComplement(string input)
         {
             return "";
         }
 
-        private string fromDecimalToOnesComplement(string input)
+        // Method to convert from a two's complement binary value to one's complement
+        private string fromTwosComplementToOnesComplement(string input)
         {
             return "";
         }
@@ -229,7 +233,15 @@ namespace BinaryConversionApplication
         // Method to convert one's complement binary values to decimal
         private string fromOnesComplementToDecimal(string input)
         {
-            return "";
+            string convertedValue = "";
+
+            // 'un-invert' bits 
+            string uninvertedBitValues = this.invertBitValues(input);
+
+            // Convert from signed to decimal
+            convertedValue = this.fromSignedToDecimal(uninvertedBitValues);
+
+            return convertedValue;
         }
 
         // Method to convert two's complement binary values to decimal
