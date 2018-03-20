@@ -233,13 +233,11 @@ namespace BinaryConversionApplication
         // Method to convert one's complement binary values to decimal
         private string fromOnesComplementToDecimal(string input)
         {
-            string convertedValue = "";
-
             // 'un-invert' bits 
             string uninvertedBitValues = this.invertBitValues(input);
 
             // Convert from signed to decimal
-            convertedValue = this.fromSignedToDecimal(uninvertedBitValues);
+            string convertedValue = this.fromSignedToDecimal(uninvertedBitValues);
 
             return convertedValue;
         }
