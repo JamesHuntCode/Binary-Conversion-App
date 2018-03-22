@@ -98,7 +98,25 @@ namespace BinaryConversionApplication
 
 
         // CONVERTING TO UNSIGNED
+        private string fromSignedToUnisigned(string input)
+        {
+            return "";
+        }
 
+        private string fromOnesComplementToUnsigned(string input)
+        {
+            return "";
+        }
+
+        private string fromTwosComplementToUnsigned(string input)
+        {
+            return "";
+        }
+
+        private string fromDecimalToUnsigned(string input)
+        {
+            return "";
+        }
 
         // CONVERTING TO SIGNED
         
@@ -245,6 +263,7 @@ namespace BinaryConversionApplication
         // Method to convert two's complement binary values to decimal
         private string fromTwosComplementToDecimal(string input)
         {
+            // get one's complement value & add 1
             int getOnesComp = Convert.ToInt32(this.fromOnesComplementToDecimal(input));
             int twosComp = getOnesComp + 1;
 
