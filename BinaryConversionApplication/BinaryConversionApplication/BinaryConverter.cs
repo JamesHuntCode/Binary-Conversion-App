@@ -11,7 +11,37 @@ namespace BinaryConversionApplication
         // Method to convert user input into an unsigned binary number
         public string ConvertToUnsigned(string input, string repType)
         {
-            return "";
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+                    convertedValue = input;
+
+                    break;
+                case "signed":
+
+                    
+
+                    break;
+                case "ones-complement":
+
+                    
+
+                    break;
+                case "twos-complement":
+
+
+                    break;
+                case "decimal":
+
+
+
+                    break;
+            }
+
+            return convertedValue;
         }
 
         // Method to convert user input into a signed binary number
@@ -122,26 +152,6 @@ namespace BinaryConversionApplication
         
 
         // CONVERTING TO ONE'S COMPLEMENT
-
-        // Method to convert from an unsigned binary value to one's complement
-        private string invertBitValues(string input)
-        {
-            char[] valueBreakdown = input.ToCharArray();
-
-            for (int i = 0; i < valueBreakdown.Length; i++)
-            {
-                if (valueBreakdown[i].Equals('0'))
-                {
-                    valueBreakdown[i] = '1';
-                }
-                else
-                {
-                    valueBreakdown[i] = '0';
-                }
-            }
-
-            return new String(valueBreakdown);
-        }
 
         // Method to convert from a signed binary value to one's complement
         private string fromSignedToOnesComplement(string input)
@@ -271,7 +281,27 @@ namespace BinaryConversionApplication
         }
 
         // OPERATIONS USED IN ABOVE METHODS
-        
+
+        // Method used to invert all bits in binary value
+        private string invertBitValues(string input)
+        {
+            char[] valueBreakdown = input.ToCharArray();
+
+            for (int i = 0; i < valueBreakdown.Length; i++)
+            {
+                if (valueBreakdown[i].Equals('0'))
+                {
+                    valueBreakdown[i] = '1';
+                }
+                else
+                {
+                    valueBreakdown[i] = '0';
+                }
+            }
+
+            return new String(valueBreakdown);
+        }
+
         // Method used to get sum of binary value
         private int getBinarySum(Dictionary<int, char> values)
         {
