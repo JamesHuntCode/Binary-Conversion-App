@@ -86,7 +86,7 @@ namespace BinaryConversionApplication
                     break;
                 case "twos-complement":
 
-
+                    convertedValue = this.fromTwosComplementToDecimal(input);
 
                     break;
             }
@@ -245,7 +245,10 @@ namespace BinaryConversionApplication
         // Method to convert two's complement binary values to decimal
         private string fromTwosComplementToDecimal(string input)
         {
-            return "";
+            int getOnesComp = Convert.ToInt32(this.fromOnesComplementToDecimal(input));
+            int twosComp = getOnesComp + 1;
+
+            return twosComp.ToString();
         }
 
         // OPERATIONS USED IN ABOVE METHODS
