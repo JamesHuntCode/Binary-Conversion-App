@@ -35,7 +35,7 @@ namespace BinaryConversionApplication
             string userInput = this.getUserInput();
 
             // Run initial validation
-            if (this.runBaseValidations(userInput.Length))
+            if (this.runBaseValidations(userInput))
             {
                 string validatedBinaryInput;
 
@@ -78,7 +78,15 @@ namespace BinaryConversionApplication
                     // Validate decimal input
                     if (int.TryParse(userInput, out userInputValue))
                     {
-                        // Functional - come back here when ready
+                        if (this.runDecimalValidations(userInputValue))
+                        {
+                            // Functional - come back here when ready
+                        }
+                        else
+                        {
+                            MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
+                            this.txtInputBinary.Text = ""; // Reset text field
+                        }
                     }
                     else
                     {
@@ -94,9 +102,9 @@ namespace BinaryConversionApplication
         }
 
         // Method used to ensure length of user's input complies with representation style chosen
-        private bool runBaseValidations(int inputLength)
+        private bool runBaseValidations(string input)
         {
-            if (((this.radSigned.Checked) || (this.radOnesComp.Checked) || (this.radTwosComp.Checked)) && (inputLength == 4))
+            if (((this.radSigned.Checked) || (this.radOnesComp.Checked) || (this.radTwosComp.Checked)) && (input.Length == 4))
             {
                 return false;
             }
@@ -104,6 +112,41 @@ namespace BinaryConversionApplication
             {
                 return true;
             }
+        }
+
+        // Method used to ensure decimal value entered can be represented in output type
+        private bool runDecimalValidations(int input)
+        {
+            switch (this.getConvertingTo())
+            {
+                case "unsigned":
+
+                    if (input > 255)
+                    {
+                        return false;
+                    }
+
+                    break;
+                case "signed":
+
+                    if ((input > 255) || (input < -127))
+                    {
+                        return false;
+                    }
+
+                    break;
+                case "ones-complement":
+
+
+
+                    break;
+                case "twos-complement":
+
+
+
+                    break;
+            }
+            return true;
         }
 
         // Method used to retrieve user input from form
