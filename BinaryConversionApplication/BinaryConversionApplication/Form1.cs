@@ -80,7 +80,14 @@ namespace BinaryConversionApplication
                     {
                         if (this.runDecimalValidations(userInputValue))
                         {
-                            // Functional - come back here when ready
+                            // Get conversion type
+                            string convertingTo = this.getConvertingTo();
+
+                            // Convert and display binary conversion
+                            string output = this.convertDecimalValue(convertingTo, userInputValue);
+
+                            // Output converted value
+                            this.txtOutputBinary.Text = output;
                         }
                         else
                         {
@@ -250,34 +257,73 @@ namespace BinaryConversionApplication
             string convertingFrom = repType;
             string convertingInto = convertTo;
 
-            string convertedBinaryValue = "";
+            string convertedValue = "";
 
             // Determine what the user is comverting to / call correct method
             switch (convertingInto)
             {
                 case "unsigned": // CONVERTING TO UNSIGNED BINARY
 
-                    convertedBinaryValue = this.converter.ConvertToUnsigned(originalBinaryValue, convertingFrom);
+                    convertedValue = this.converter.ConvertToUnsigned(originalBinaryValue, convertingFrom);
 
                     break;
                 case "signed": // CONVERTING TO SIGNED BINARY
 
-                    convertedBinaryValue = this.converter.ConvertToSigned(originalBinaryValue, convertingFrom);
+                    convertedValue = this.converter.ConvertToSigned(originalBinaryValue, convertingFrom);
 
                     break;
                 case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
 
-                    convertedBinaryValue = this.converter.ConvertToOnesComplement(originalBinaryValue, convertingFrom);
+                    convertedValue = this.converter.ConvertToOnesComplement(originalBinaryValue, convertingFrom);
 
                     break;
                 case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
 
-                    convertedBinaryValue = this.converter.ConvertToTwosComplement(originalBinaryValue, convertingFrom);
+                    convertedValue = this.converter.ConvertToTwosComplement(originalBinaryValue, convertingFrom);
 
                     break;
                 case "decimal": // CONVERTING TO DECIMAL
 
-                    convertedBinaryValue = this.converter.ConvertToDecimal(originalBinaryValue, convertingFrom);
+                    convertedValue = this.converter.ConvertToDecimal(originalBinaryValue, convertingFrom);
+
+                    break;
+            }
+            return convertedValue;
+        }
+
+        // Method to invoke conversion from decimal to desired binary representation
+        private string convertDecimalValue(string convertingTo, int input)
+        {
+            string inputInteger = Convert.ToString(input);
+            string convertTo = convertingTo;
+
+            string convertedBinaryValue = "";
+
+            switch (convertingTo)
+            {
+                case "unsigned": // CONVERTING TO UNSIGNED BINARY
+
+                    convertedBinaryValue = this.converter.ConvertToUnsigned(inputInteger, "decimal");
+
+                    break;
+                case "signed": // CONVERTING TO SIGNED BINARY
+
+                    convertedBinaryValue = this.converter.ConvertToSigned(inputInteger, "decimal");
+
+                    break;
+                case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
+
+                    convertedBinaryValue = this.converter.ConvertToOnesComplement(inputInteger, "decimal");
+
+                    break;
+                case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
+
+                    convertedBinaryValue = this.converter.ConvertToTwosComplement(inputInteger, "decimal");
+
+                    break;
+                case "decimal": // CONVERTING TO DECIMAL?
+
+                    convertedBinaryValue = Convert.ToString(input); // Return same value...
 
                     break;
             }
