@@ -150,10 +150,6 @@ namespace BinaryConversionApplication
         // Method to convert from a decimal value to unsigned binary
         private string fromDecimalToUnsigned(string input) 
         {
-            // values needed for conversion algorithm
-            double inputValue = Convert.ToInt32(input);
-            const double baseVal = 2;
-
             // place to store remainders (which indicate binary value)
             List<char> binaryValues = new List<char>();
 
