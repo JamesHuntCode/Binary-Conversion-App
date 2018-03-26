@@ -125,10 +125,13 @@ namespace BinaryConversionApplication
             return convertedValue;
         }
 
-        /* INDIVIDUAL CONVERSION METHODS (INVOKED FROM METHODS ABOVE) */
+        /*##############################################################################
+          #                                                                             #
+          #                        CONVERTING TO UNSIGNED                               #
+          #                                                                             #
+          ###############################################################################*/
 
-
-        // CONVERTING TO UNSIGNED
+        
         private string fromSignedToUnisigned(string input)
         {
             return "";
@@ -144,15 +147,24 @@ namespace BinaryConversionApplication
             return "";
         }
 
-        private string fromDecimalToUnsigned(string input) // <!---------------------------------------- WHERE LEFT OFF
+        // Method to convert from a decimal value to unsigned binary
+        private string fromDecimalToUnsigned(string input) 
         {
-            return "";
+            int decimalValue = Convert.ToInt32(input);
+            string convertedValue = "";
+
+
+            return convertedValue;
         }
 
         // CONVERTING TO SIGNED
-        
 
-        // CONVERTING TO ONE'S COMPLEMENT
+
+        /*##############################################################################
+         #                                                                             #
+         #                      CONVERTING TO ONE'S COMPLEMENT                         #
+         #                                                                             #
+         ###############################################################################*/
 
         // Method to convert from a signed binary value to one's complement
         private string fromSignedToOnesComplement(string input)
@@ -172,11 +184,19 @@ namespace BinaryConversionApplication
             return "";
         }
 
-        // CONVERTING TO TWO'S COMPLEMENT
+        /*##############################################################################
+         #                                                                             #
+         #                     CONVERTING TO TWO'S COMPLEMENT                          #
+         #                                                                             #
+         ###############################################################################*/
 
 
 
-        // CONVERTING TO DECIMAL
+        /*##############################################################################
+         #                                                                             #
+         #                        CONVERTING TO DECIMAL                                #
+         #                                                                             #
+         ###############################################################################*/
 
         // Method to convert unsigned binary values to decimal
         private string fromUnsignedToDecimal(string input)
@@ -281,7 +301,11 @@ namespace BinaryConversionApplication
             return twosComp.ToString();
         }
 
-        // OPERATIONS USED IN ABOVE METHODS
+        /*##############################################################################
+         #                                                                             #
+         #                        ABSTRACT METHODS USED                                #
+         #                                                                             #
+         ###############################################################################*/
 
         // Method used to invert all bits in binary value
         private string invertBitValues(string input)
