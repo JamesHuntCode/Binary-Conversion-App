@@ -39,17 +39,17 @@
             this.radOnesComp = new System.Windows.Forms.RadioButton();
             this.radSigned = new System.Windows.Forms.RadioButton();
             this.grpInput = new System.Windows.Forms.GroupBox();
+            this.radDecimal = new System.Windows.Forms.RadioButton();
             this.grpOutput = new System.Windows.Forms.GroupBox();
+            this.radDecimalOut = new System.Windows.Forms.RadioButton();
             this.radUnsignedOut = new System.Windows.Forms.RadioButton();
             this.radTwosOut = new System.Windows.Forms.RadioButton();
             this.radSignedOut = new System.Windows.Forms.RadioButton();
             this.radOnesOut = new System.Windows.Forms.RadioButton();
-            this.radDecimalOut = new System.Windows.Forms.RadioButton();
             this.lblBeginConversion = new System.Windows.Forms.Label();
             this.txtInputBinary = new System.Windows.Forms.TextBox();
             this.lvlYourInput = new System.Windows.Forms.Label();
             this.txtOutputBinary = new System.Windows.Forms.TextBox();
-            this.radDecimal = new System.Windows.Forms.RadioButton();
             this.grpInput.SuspendLayout();
             this.grpOutput.SuspendLayout();
             this.SuspendLayout();
@@ -80,9 +80,9 @@
             this.lblRepType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRepType.Location = new System.Drawing.Point(12, 127);
             this.lblRepType.Name = "lblRepType";
-            this.lblRepType.Size = new System.Drawing.Size(358, 31);
+            this.lblRepType.Size = new System.Drawing.Size(188, 31);
             this.lblRepType.TabIndex = 5;
-            this.lblRepType.Text = "Select Representation Type:";
+            this.lblRepType.Text = "Convert From:";
             // 
             // lblConvert
             // 
@@ -177,6 +177,18 @@
             this.grpInput.TabStop = false;
             this.grpInput.Text = "Input";
             // 
+            // radDecimal
+            // 
+            this.radDecimal.AutoSize = true;
+            this.radDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radDecimal.Location = new System.Drawing.Point(1, 159);
+            this.radDecimal.Name = "radDecimal";
+            this.radDecimal.Size = new System.Drawing.Size(107, 29);
+            this.radDecimal.TabIndex = 19;
+            this.radDecimal.TabStop = true;
+            this.radDecimal.Text = "Decimal";
+            this.radDecimal.UseVisualStyleBackColor = true;
+            // 
             // grpOutput
             // 
             this.grpOutput.Controls.Add(this.radDecimalOut);
@@ -190,6 +202,18 @@
             this.grpOutput.TabIndex = 20;
             this.grpOutput.TabStop = false;
             this.grpOutput.Text = "Output";
+            // 
+            // radDecimalOut
+            // 
+            this.radDecimalOut.AutoSize = true;
+            this.radDecimalOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radDecimalOut.Location = new System.Drawing.Point(0, 159);
+            this.radDecimalOut.Name = "radDecimalOut";
+            this.radDecimalOut.Size = new System.Drawing.Size(107, 29);
+            this.radDecimalOut.TabIndex = 18;
+            this.radDecimalOut.TabStop = true;
+            this.radDecimalOut.Text = "Decimal";
+            this.radDecimalOut.UseVisualStyleBackColor = true;
             // 
             // radUnsignedOut
             // 
@@ -239,18 +263,6 @@
             this.radOnesOut.Text = "One\'s Complement";
             this.radOnesOut.UseVisualStyleBackColor = true;
             // 
-            // radDecimalOut
-            // 
-            this.radDecimalOut.AutoSize = true;
-            this.radDecimalOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDecimalOut.Location = new System.Drawing.Point(0, 159);
-            this.radDecimalOut.Name = "radDecimalOut";
-            this.radDecimalOut.Size = new System.Drawing.Size(107, 29);
-            this.radDecimalOut.TabIndex = 18;
-            this.radDecimalOut.TabStop = true;
-            this.radDecimalOut.Text = "Decimal";
-            this.radDecimalOut.UseVisualStyleBackColor = true;
-            // 
             // lblBeginConversion
             // 
             this.lblBeginConversion.AutoSize = true;
@@ -286,18 +298,6 @@
             this.txtOutputBinary.Name = "txtOutputBinary";
             this.txtOutputBinary.Size = new System.Drawing.Size(217, 31);
             this.txtOutputBinary.TabIndex = 24;
-            // 
-            // radDecimal
-            // 
-            this.radDecimal.AutoSize = true;
-            this.radDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDecimal.Location = new System.Drawing.Point(1, 159);
-            this.radDecimal.Name = "radDecimal";
-            this.radDecimal.Size = new System.Drawing.Size(107, 29);
-            this.radDecimal.TabIndex = 19;
-            this.radDecimal.TabStop = true;
-            this.radDecimal.Text = "Decimal";
-            this.radDecimal.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

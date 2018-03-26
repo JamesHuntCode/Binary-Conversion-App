@@ -297,37 +297,37 @@ namespace BinaryConversionApplication
             string inputInteger = Convert.ToString(input);
             string convertTo = convertingTo;
 
-            string convertedBinaryValue = "";
+            string convertedValue = "";
 
             switch (convertingTo)
             {
                 case "unsigned": // CONVERTING TO UNSIGNED BINARY
 
-                    convertedBinaryValue = this.converter.ConvertToUnsigned(inputInteger, "decimal");
+                    convertedValue = this.converter.ConvertToUnsigned(inputInteger, "decimal");
 
                     break;
                 case "signed": // CONVERTING TO SIGNED BINARY
 
-                    convertedBinaryValue = this.converter.ConvertToSigned(inputInteger, "decimal");
+                    convertedValue = this.converter.ConvertToSigned(inputInteger, "decimal");
 
                     break;
                 case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
 
-                    convertedBinaryValue = this.converter.ConvertToOnesComplement(inputInteger, "decimal");
+                    convertedValue = this.converter.ConvertToOnesComplement(inputInteger, "decimal");
 
                     break;
                 case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
 
-                    convertedBinaryValue = this.converter.ConvertToTwosComplement(inputInteger, "decimal");
+                    convertedValue = this.converter.ConvertToTwosComplement(inputInteger, "decimal");
 
                     break;
                 case "decimal": // CONVERTING TO DECIMAL?
 
-                    convertedBinaryValue = Convert.ToString(input); // Return same value...
+                    convertedValue = Convert.ToString(input); // Return same value...
 
                     break;
             }
-            return convertedBinaryValue;
+            return convertedValue;
         }
     }
 }

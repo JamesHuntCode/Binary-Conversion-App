@@ -33,10 +33,11 @@ namespace BinaryConversionApplication
                 case "twos-complement":
 
 
+
                     break;
                 case "decimal":
 
-
+                    convertedValue = this.fromDecimalToUnsigned(input);
 
                     break;
             }
@@ -143,7 +144,7 @@ namespace BinaryConversionApplication
             return "";
         }
 
-        private string fromDecimalToUnsigned(string input)
+        private string fromDecimalToUnsigned(string input) // <!---------------------------------------- WHERE LEFT OFF
         {
             return "";
         }
