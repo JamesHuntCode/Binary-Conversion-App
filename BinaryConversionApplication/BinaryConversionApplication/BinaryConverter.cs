@@ -151,20 +151,22 @@ namespace BinaryConversionApplication
         private string fromDecimalToUnsigned(string input) 
         {
             // values needed for conversion algorithm
-            int decimalValue = Convert.ToInt32(input);
-            const int baseVal = 2;
-            int remainder = decimalValue;
+            double inputValue = Convert.ToInt32(input);
+            const double baseVal = 2;
 
             // place to store remainders (which indicate binary value)
             List<char> binaryValues = new List<char>();
 
-            while (remainder != 0)
+            while (/* condition for repeating division by 2 */)
             {
-                // implement conversion here
+                // implement conversion algorithm here
             }
 
+            // Format output and return value
             binaryValues.Reverse();
-            return binaryValues.ToString();
+
+            string formattedOutput = string.Join("", binaryValues.ToArray());
+            return formattedOutput;
         }
 
         // CONVERTING TO SIGNED
