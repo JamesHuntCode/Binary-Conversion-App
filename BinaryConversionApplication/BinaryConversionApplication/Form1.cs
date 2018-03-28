@@ -78,7 +78,7 @@ namespace BinaryConversionApplication
                     // Validate decimal input
                     if (int.TryParse(userInput, out userInputValue))
                     {
-                        if (this.runDecimalValidations(userInputValue))
+                        if ((this.runDecimalValidations(userInputValue)) && (this.isValidNumber(userInputValue)))
                         {
                             // Get conversion type
                             string convertingTo = this.getConvertingTo();
@@ -112,6 +112,19 @@ namespace BinaryConversionApplication
         private bool runBaseValidations(string input)
         {
             if (((this.radSigned.Checked) || (this.radOnesComp.Checked) || (this.radTwosComp.Checked)) && (input.Length == 4))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        // Method used to ensure user's input complies with representation boundaries
+        private bool isValidNumber(int input)
+        {
+            if ((this.radDecimal.Checked) && (this.radUnsignedOut.Checked) && (input < 0))
             {
                 return false;
             }
