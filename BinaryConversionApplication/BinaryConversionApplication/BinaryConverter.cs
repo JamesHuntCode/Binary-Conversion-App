@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BinaryConversionApplication
 {
@@ -153,9 +154,22 @@ namespace BinaryConversionApplication
             // place to store remainders (which indicate binary value)
             List<char> binaryValues = new List<char>();
 
-            while (/* condition for repeating division by 2 */)
+            int currentValue = Convert.ToInt32(input);
+
+            while (currentValue != 0)
             {
-                // implement conversion algorithm here
+                int remainder = currentValue % 2;
+
+                if (remainder > 0)
+                {
+                    binaryValues.Add('1');
+                }
+                else
+                {
+                    binaryValues.Add('0');
+                }
+
+                currentValue /= 2;
             }
 
             // convert to 8 bit value
