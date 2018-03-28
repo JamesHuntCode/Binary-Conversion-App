@@ -158,9 +158,17 @@ namespace BinaryConversionApplication
                 // implement conversion algorithm here
             }
 
+            // convert to 8 bit value
+            if (binaryValues.Count != 8)
+            {
+                while (binaryValues.Count < 8)
+                {
+                    binaryValues.Add('0');
+                }
+            }
+
             // Format output and return value
             binaryValues.Reverse();
-
             string formattedOutput = string.Join("", binaryValues.ToArray());
             return formattedOutput;
         }
