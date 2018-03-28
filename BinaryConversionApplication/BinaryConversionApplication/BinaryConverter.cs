@@ -279,7 +279,7 @@ namespace BinaryConversionApplication
 
             char[] inputValue = input.ToCharArray();
 
-            bool isPositive = inputValue[0].Equals('0');
+            bool isPositive = (inputValue[0].Equals('0'));
 
             string convertedValue = "";
 
