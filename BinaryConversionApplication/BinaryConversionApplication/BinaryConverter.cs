@@ -152,16 +152,12 @@ namespace BinaryConversionApplication
           #                                                                             #
           ###############################################################################*/
         
-        // Method to covert from one's complement binary to unsigned
-        private string fromOnesComplementToUnsigned(string input)
-        {
-            return "";
-        }
-
         // Method to covert from twos's complement binary to unsigned
         private string fromTwosComplementToUnsigned(string input)
         {
-            return "";
+            string decimalValue = this.fromTwosComplementToDecimal(input);
+            string unsignedValue = this.fromDecimalToUnsigned(decimalValue);
+            return unsignedValue;
         }
 
         // Method to convert from a decimal value to unsigned binary
@@ -203,7 +199,13 @@ namespace BinaryConversionApplication
             return formattedOutput;
         }
 
-        // CONVERTING TO SIGNED
+        /*##############################################################################
+         #                                                                             #
+         #                      CONVERTING TO ONE'S SIGNED                             #
+         #                                                                             #
+         ###############################################################################*/
+
+
 
 
         /*##############################################################################
