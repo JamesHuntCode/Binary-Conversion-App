@@ -141,7 +141,7 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
-                    if (input > 255)
+                    if ((input > 255) || (input < 0))
                     {
                         return false;
                     }
@@ -157,12 +157,18 @@ namespace BinaryConversionApplication
                     break;
                 case "ones-complement":
 
-
+                    if ((input > 127) || (input < -128))
+                    {
+                        return false;
+                    }
 
                     break;
                 case "twos-complement":
 
-
+                    if ((input > 127) || (input < -128))
+                    {
+                        return false;
+                    }
 
                     break;
             }
