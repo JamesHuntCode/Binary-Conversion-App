@@ -121,10 +121,10 @@
             this.radUnsigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radUnsigned.Location = new System.Drawing.Point(0, 19);
             this.radUnsigned.Name = "radUnsigned";
-            this.radUnsigned.Size = new System.Drawing.Size(121, 29);
+            this.radUnsigned.Size = new System.Drawing.Size(188, 29);
             this.radUnsigned.TabIndex = 14;
             this.radUnsigned.TabStop = true;
-            this.radUnsigned.Text = "Unsigned";
+            this.radUnsigned.Text = "Unsigned Binary";
             this.radUnsigned.UseVisualStyleBackColor = true;
             // 
             // radTwosComp
@@ -157,10 +157,10 @@
             this.radSigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSigned.Location = new System.Drawing.Point(0, 54);
             this.radSigned.Name = "radSigned";
-            this.radSigned.Size = new System.Drawing.Size(169, 29);
+            this.radSigned.Size = new System.Drawing.Size(164, 29);
             this.radSigned.TabIndex = 17;
             this.radSigned.TabStop = true;
-            this.radSigned.Text = "Signed Integer";
+            this.radSigned.Text = "Signed Binary";
             this.radSigned.UseVisualStyleBackColor = true;
             // 
             // grpInput
@@ -221,10 +221,10 @@
             this.radUnsignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radUnsignedOut.Location = new System.Drawing.Point(0, 19);
             this.radUnsignedOut.Name = "radUnsignedOut";
-            this.radUnsignedOut.Size = new System.Drawing.Size(121, 29);
+            this.radUnsignedOut.Size = new System.Drawing.Size(188, 29);
             this.radUnsignedOut.TabIndex = 14;
             this.radUnsignedOut.TabStop = true;
-            this.radUnsignedOut.Text = "Unsigned";
+            this.radUnsignedOut.Text = "Unsigned Binary";
             this.radUnsignedOut.UseVisualStyleBackColor = true;
             // 
             // radTwosOut
@@ -245,10 +245,10 @@
             this.radSignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radSignedOut.Location = new System.Drawing.Point(0, 54);
             this.radSignedOut.Name = "radSignedOut";
-            this.radSignedOut.Size = new System.Drawing.Size(169, 29);
+            this.radSignedOut.Size = new System.Drawing.Size(164, 29);
             this.radSignedOut.TabIndex = 17;
             this.radSignedOut.TabStop = true;
-            this.radSignedOut.Text = "Signed Integer";
+            this.radSignedOut.Text = "Signed Binary";
             this.radSignedOut.UseVisualStyleBackColor = true;
             // 
             // radOnesOut

@@ -69,7 +69,38 @@ namespace BinaryConversionApplication
         // Method to convert user input into a signed binary number
         public string ConvertToSigned(string input, string repType)
         {
-            return "";
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+                    convertedValue = input;
+
+                    break;
+                case "signed":
+
+                    convertedValue = input;
+
+                    break;
+                case "ones-complement":
+
+                    convertedValue = this.fromOnesComplementToSigned(input);
+
+                    break;
+                case "twos-complement":
+
+                    convertedValue = this.fromTwosComplementToSigned(input);
+
+                    break;
+                case "decimal":
+
+                    convertedValue = this.fromDecimalToSigned(input);
+
+                    break;
+            }
+
+            return convertedValue;
         }
 
         // Method to convert user input into a one's complement binary number
@@ -112,7 +143,38 @@ namespace BinaryConversionApplication
         // Method to convert user input into a two's complement binary number
         public string ConvertToTwosComplement(string input, string repType)
         {
-            return "";
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+                    convertedValue = this.fromUnsignedToTwosComplement(input);
+
+                    break;
+                case "signed":
+
+                    convertedValue = this.fromSignedToTwosComplement(input);
+
+                    break;
+                case "ones-complement":
+
+                    convertedValue = this.fromOnesComplementToTwosComplement(input);
+
+                    break;
+                case "twos-complement":
+
+                    convertedValue = input;
+
+                    break;
+                case "decimal":
+
+                    convertedValue = this.fromDecimalToTwosComplement(input);
+
+                    break;
+            }
+
+            return convertedValue;
         }
 
         // Method to convert user input into a decimal number
@@ -206,8 +268,23 @@ namespace BinaryConversionApplication
          #                                                                             #
          ###############################################################################*/
 
+        // Method to convert one's complement to signed binary
+        private string fromOnesComplementToSigned(string input)
+        {
+            return "";
+        }
 
+        // Method to convert twos's complement to signed binary
+        private string fromTwosComplementToSigned(string input)
+        {
+            return "";
+        }
 
+        // Method to convert decimal to signed binary
+        private string fromDecimalToSigned(string input)
+        {
+            return "";
+        }
 
         /*##############################################################################
          #                                                                             #
@@ -242,7 +319,25 @@ namespace BinaryConversionApplication
          #                                                                             #
          ###############################################################################*/
 
+        private string fromUnsignedToTwosComplement(string input)
+        {
+            return "";
+        }
 
+        private string fromSignedToTwosComplement(string input)
+        {
+            return "";
+        }
+
+        private string fromOnesComplementToTwosComplement(string input)
+        {
+            return "";
+        }
+
+        private string fromDecimalToTwosComplement(string input)
+        {
+            return "";
+        }
 
         /*##############################################################################
          #                                                                             #
