@@ -319,21 +319,25 @@ namespace BinaryConversionApplication
          #                                                                             #
          ###############################################################################*/
 
+        // Method to convert from unsigned to two's complement
         private string fromUnsignedToTwosComplement(string input)
         {
             return "";
         }
 
+        // Method to convert from signed binary to two's complement
         private string fromSignedToTwosComplement(string input)
         {
             return "";
         }
 
+        // Method to convert from one's complement to two's complement
         private string fromOnesComplementToTwosComplement(string input)
         {
             return "";
         }
 
+        // Method to convert from decimal to two's complement
         private string fromDecimalToTwosComplement(string input)
         {
             return "";
