@@ -96,11 +96,12 @@ namespace BinaryConversionApplication
                     break;
                 case "twos-complement":
 
+                    convertedValue = this.fromTwosComplementToOnesComplement(input);
 
                     break;
                 case "decimal":
 
-
+                    convertedValue = this.fromDecimalToOnesComplement(input);
 
                     break;
             }
@@ -230,7 +231,9 @@ namespace BinaryConversionApplication
         // Method to convert from a two's complement binary value to one's complement
         private string fromTwosComplementToOnesComplement(string input)
         {
-            return "";
+            string unsigned = this.fromTwosComplementToUnsigned(input);
+            string onesComplement = this.invertBitValues(unsigned);
+            return onesComplement;
         }
 
         /*##############################################################################
