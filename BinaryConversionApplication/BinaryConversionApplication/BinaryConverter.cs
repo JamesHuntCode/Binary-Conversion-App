@@ -22,17 +22,38 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-                    
+                    if (isPositiveBinary(input, true))
+                    {
+                        convertedValue = input;
+                    }
+                    else
+                    {
+                        return returnNA();
+                    }
 
                     break;
                 case "ones-complement":
 
-                    
+                    if (isPositiveBinary(input, true))
+                    {
+                        convertedValue = this.invertBitValues(input);
+                    }
+                    else
+                    {
+                        return returnNA();
+                    }
 
                     break;
                 case "twos-complement":
 
-
+                    if (isPositiveBinary(input, true))
+                    {
+                        convertedValue = this.fromTwosComplementToUnsigned(input);
+                    }
+                    else
+                    {
+                        return returnNA();
+                    }
 
                     break;
                 case "decimal":
@@ -130,18 +151,14 @@ namespace BinaryConversionApplication
           #                        CONVERTING TO UNSIGNED                               #
           #                                                                             #
           ###############################################################################*/
-
         
-        private string fromSignedToUnisigned(string input)
-        {
-            return "";
-        }
-
+        // Method to covert from one's complement binary to unsigned
         private string fromOnesComplementToUnsigned(string input)
         {
             return "";
         }
 
+        // Method to covert from twos's complement binary to unsigned
         private string fromTwosComplementToUnsigned(string input)
         {
             return "";
@@ -198,13 +215,14 @@ namespace BinaryConversionApplication
         // Method to convert from a signed binary value to one's complement
         private string fromSignedToOnesComplement(string input)
         {
-            return "";
+            return this.invertBitValues(input);
         }
 
         // Method to convert from a decimal value to one's complement binary
         private string fromDecimalToOnesComplement(string input)
         {
-            return "";
+            string unsignedValue = this.fromDecimalToUnsigned(input);
+            return this.invertBitValues(unsignedValue);
         }
 
         // Method to convert from a two's complement binary value to one's complement
@@ -370,6 +388,30 @@ namespace BinaryConversionApplication
             }
 
             return sum;
+        }
+
+        // Method to determine if binary number is positive
+        private bool isPositiveBinary(string binaryValue, bool inverted)
+        {
+            char[] bits = binaryValue.ToCharArray();
+            bool isPositive = true;
+
+            if (inverted)
+            {
+                isPositive = (bits[0].Equals('1'));
+            }
+            else
+            {
+                isPositive = (bits[0].Equals('0'));
+            }
+
+            return isPositive;
+        }
+
+        // If illegal conversion occurs (negative signed to unsigned etc) return "N/A"
+        private string returnNA()
+        {
+            return "N/A";
         }
     }
 }
