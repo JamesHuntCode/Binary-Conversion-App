@@ -290,7 +290,11 @@ namespace BinaryConversionApplication
         // Method to convert decimal to signed binary
         private string fromDecimalToSigned(string input)
         {
-            return "";
+            string positiveInput = input.Remove(0, 1);
+            string unsigned = this.fromDecimalToUnsigned(positiveInput);
+            char[] bits = unsigned.ToCharArray();
+            bits[0] = '1';
+            return new String(bits);
         }
 
         /*##############################################################################
@@ -308,9 +312,8 @@ namespace BinaryConversionApplication
         // Method to convert from a decimal value to one's complement binary
         private string fromDecimalToOnesComplement(string input)
         {
-            //string unsignedValue = this.fromDecimalToSigned(input);
-            //return this.invertBitValues(unsignedValue);
-            return "in development";
+            string signedValue = this.fromDecimalToSigned(input);
+            return this.invertBitValues(signedValue);
         }
 
         // Method to convert from a two's complement binary value to one's complement
