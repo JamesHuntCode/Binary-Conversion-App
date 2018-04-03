@@ -95,7 +95,14 @@ namespace BinaryConversionApplication
                     break;
                 case "decimal":
 
-                    convertedValue = this.fromDecimalToSigned(input);
+                    if (isPositiveInteger(input))
+                    {
+                        convertedValue = this.fromDecimalToUnsigned(input);
+                    }
+                    else
+                    {
+                        convertedValue = this.fromDecimalToSigned(input);
+                    }
 
                     break;
             }
@@ -301,8 +308,9 @@ namespace BinaryConversionApplication
         // Method to convert from a decimal value to one's complement binary
         private string fromDecimalToOnesComplement(string input)
         {
-            string unsignedValue = this.fromDecimalToUnsigned(input);
-            return this.invertBitValues(unsignedValue);
+            //string unsignedValue = this.fromDecimalToSigned(input);
+            //return this.invertBitValues(unsignedValue);
+            return "in development";
         }
 
         // Method to convert from a two's complement binary value to one's complement
@@ -510,6 +518,12 @@ namespace BinaryConversionApplication
             }
 
             return isPositive;
+        }
+
+        // Method to determine if integer input is positive
+        private bool isPositiveInteger(string input)
+        {
+            return (Convert.ToInt32(input) > 0);
         }
 
         // If illegal conversion occurs (negative signed to unsigned etc) return "N/A"

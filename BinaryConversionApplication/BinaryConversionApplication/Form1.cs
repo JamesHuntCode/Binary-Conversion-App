@@ -149,7 +149,7 @@ namespace BinaryConversionApplication
                     break;
                 case "signed":
 
-                    if ((input > 255) || (input < -127))
+                    if ((input > 127) || (input < -127))
                     {
                         return false;
                     }
