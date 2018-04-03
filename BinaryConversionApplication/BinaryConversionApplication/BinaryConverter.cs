@@ -278,13 +278,15 @@ namespace BinaryConversionApplication
         // Method to convert one's complement to signed binary
         private string fromOnesComplementToSigned(string input)
         {
-            return "";
+            return this.invertBitValues(input);
         }
 
         // Method to convert twos's complement to signed binary
         private string fromTwosComplementToSigned(string input)
         {
-            return "";
+            string onescomp = this.fromTwosComplementToOnesComplement(input);
+            string signed = this.invertBitValues(onescomp);
+            return signed;
         }
 
         // Method to convert decimal to signed binary

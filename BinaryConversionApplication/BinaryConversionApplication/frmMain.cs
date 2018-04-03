@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace BinaryConversionApplication
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         // Custom classes coded to validate & convert user inputs
         private BinaryValidator validator = new BinaryValidator();
         private BinaryConverter converter = new BinaryConverter();
 
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
