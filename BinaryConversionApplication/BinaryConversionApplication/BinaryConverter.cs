@@ -447,7 +447,7 @@ namespace BinaryConversionApplication
         {
             // get one's complement value & add 1
             int getOnesComp = Convert.ToInt32(this.fromOnesComplementToDecimal(input));
-            int twosComp = getOnesComp + 1;
+            int twosComp = getOnesComp - 1;
 
             return twosComp.ToString();
         }
