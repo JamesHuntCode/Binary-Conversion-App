@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BinaryConversionApplication
 {
@@ -216,7 +217,7 @@ namespace BinaryConversionApplication
             return convertedValue;
         }
 
-        /*##############################################################################
+        /*###############################################################################
           #                                                                             #
           #                        CONVERTING TO UNSIGNED                               #
           #                                                                             #
@@ -343,20 +344,25 @@ namespace BinaryConversionApplication
         {
             int dec = Convert.ToInt32(this.fromSignedToDecimal(input));
             string decPlus1 = Convert.ToString(dec + 1);
-            string twoscomp = this.fromSignedToOnesComplement(decPlus1);
+            string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
             return twoscomp;
         }
 
         // Method to convert from one's complement to two's complement
         private string fromOnesComplementToTwosComplement(string input)
         {
-            return "";
+            int dec = Convert.ToInt32(this.fromOnesComplementToDecimal(input));
+            string decPlus1 = Convert.ToString(dec + 1);
+            string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
+            return twoscomp;
         }
 
         // Method to convert from decimal to two's complement
         private string fromDecimalToTwosComplement(string input)
         {
-            return "";
+            string decPlus1 = Convert.ToString(Convert.ToInt32(input) + 1);
+            string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
+            return twoscomp;
         }
 
         /*##############################################################################

@@ -78,7 +78,7 @@ namespace BinaryConversionApplication
                     break;
                 case "twos-complement":
 
-                    if ((input > 127) || (input < -128))
+                    if ((input > 126) || (input < -128))
                     {
                         return false;
                     }
