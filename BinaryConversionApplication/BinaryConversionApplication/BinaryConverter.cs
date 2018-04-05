@@ -293,10 +293,29 @@ namespace BinaryConversionApplication
         // Method to convert decimal to signed binary
         private string fromDecimalToSigned(string input)
         {
-            string positiveInput = input.Remove(0, 1);
+            string positiveInput = "";
+
+            if (input.Contains('-'))
+            { 
+                positiveInput = input.Remove(0, 1);
+            }
+            else
+            {
+                positiveInput = input;
+            }
+
             string unsigned = this.fromDecimalToUnsigned(positiveInput);
             char[] bits = unsigned.ToCharArray();
-            bits[0] = '1';
+
+            if (input.Contains('-'))
+            {
+                bits[0] = '1';
+            }
+            else
+            {
+                bits[0] = '0';
+            }
+
             return new String(bits);
         }
 
