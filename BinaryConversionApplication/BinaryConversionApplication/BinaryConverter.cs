@@ -341,7 +341,10 @@ namespace BinaryConversionApplication
         // Method to convert from signed binary to two's complement
         private string fromSignedToTwosComplement(string input)
         {
-            return "";
+            int dec = Convert.ToInt32(this.fromSignedToDecimal(input));
+            string decPlus1 = Convert.ToString(dec + 1);
+            string twoscomp = this.fromSignedToOnesComplement(decPlus1);
+            return twoscomp;
         }
 
         // Method to convert from one's complement to two's complement
