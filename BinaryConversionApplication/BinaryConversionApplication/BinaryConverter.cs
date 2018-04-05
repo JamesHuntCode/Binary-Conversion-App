@@ -355,7 +355,9 @@ namespace BinaryConversionApplication
         // Method to convert from unsigned to two's complement
         private string fromUnsignedToTwosComplement(string input)
         {
-            return "";
+            string onescomp = this.invertBitValues(input);
+            string twoscomp = this.fromOnesComplementToTwosComplement(onescomp);
+            return twoscomp;
         }
 
         // Method to convert from signed binary to two's complement
