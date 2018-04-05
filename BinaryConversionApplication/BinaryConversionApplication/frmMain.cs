@@ -78,7 +78,7 @@ namespace BinaryConversionApplication
                     // Validate decimal input
                     if (int.TryParse(userInput, out userInputValue))
                     {
-                        if ((this.runDecimalValidations(userInputValue)) && (this.isValidNumber(userInputValue)))
+                        if ((this.validator.runDecimalValidations(userInputValue, this.getConvertingTo())) && (this.isValidNumber(userInputValue)))
                         {
                             // Get conversion type
                             string convertingTo = this.getConvertingTo();
@@ -132,47 +132,6 @@ namespace BinaryConversionApplication
             {
                 return true;
             }
-        }
-
-        // Method used to ensure decimal value entered can be represented in output type
-        private bool runDecimalValidations(int input)
-        {
-            switch (this.getConvertingTo())
-            {
-                case "unsigned":
-
-                    if ((input > 255) || (input < 0))
-                    {
-                        return false;
-                    }
-
-                    break;
-                case "signed":
-
-                    if ((input > 255) || (input < -127))
-                    {
-                        return false;
-                    }
-
-                    break;
-                case "ones-complement":
-
-                    if ((input > 127) || (input < -128))
-                    {
-                        return false;
-                    }
-
-                    break;
-                case "twos-complement":
-
-                    if ((input > 127) || (input < -128))
-                    {
-                        return false;
-                    }
-
-                    break;
-            }
-            return true;
         }
 
         // Method used to retrieve user input from form

@@ -29,7 +29,7 @@ namespace BinaryConversionApplication
             }
         }
 
-        // Method to check value input by user is binary
+        // Method to check value input by user is binary (used only in this class)
         private bool isBinary(string input)
         {
             char[] values = input.ToCharArray();
@@ -44,6 +44,47 @@ namespace BinaryConversionApplication
                 }
             }
             // Value is binary
+            return true;
+        }
+
+        // Method used to ensure decimal value entered can be represented in output type
+        public bool runDecimalValidations(int input, string convertingTo)
+        {
+            switch (convertingTo)
+            {
+                case "unsigned":
+
+                    if ((input > 255) || (input < 0))
+                    {
+                        return false;
+                    }
+
+                    break;
+                case "signed":
+
+                    if ((input > 255) || (input < -127))
+                    {
+                        return false;
+                    }
+
+                    break;
+                case "ones-complement":
+
+                    if ((input > 127) || (input < -128))
+                    {
+                        return false;
+                    }
+
+                    break;
+                case "twos-complement":
+
+                    if ((input > 127) || (input < -128))
+                    {
+                        return false;
+                    }
+
+                    break;
+            }
             return true;
         }
     }
