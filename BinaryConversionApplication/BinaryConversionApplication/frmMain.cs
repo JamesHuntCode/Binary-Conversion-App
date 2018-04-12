@@ -116,7 +116,17 @@ namespace BinaryConversionApplication
                                 string convertingTo = this.getConvertingTo();
 
                                 // Convert value
-                                string output = this.convertFloatValue(convertingTo, userInputValue);
+                                bool isActuallyFloat = (Convert.ToString(userInputValue).Contains('.'));
+                                string output = "";
+
+                                if (isActuallyFloat)
+                                {
+                                    output = this.convertFloatValue(convertingTo, userInputValue);
+                                }
+                                else
+                                {
+                                    output = this.convertDecimalValue(convertingTo, Convert.ToInt32(userInputValue));
+                                }
 
                                 // Output converted value
                                 this.txtOutputBinary.Text = output;
@@ -367,71 +377,36 @@ namespace BinaryConversionApplication
         {
             string inputFloat = Convert.ToString(input);
             string convertTo = convertingTo;
-            bool isActuallyFloat = (inputFloat.Contains('.'));
-
+    
             string convertedValue = "";
 
-            if (isActuallyFloat)
+            switch (convertingTo)
             {
-                switch (convertingTo)
-                {
-                    case "unsigned": // CONVERTING TO UNSIGNED BINARY
+                case "unsigned": // CONVERTING TO UNSIGNED BINARY
 
-                        convertedValue = this.converter.ConvertToUnsigned(inputFloat, "float");
+                    convertedValue = this.converter.ConvertToUnsigned(inputFloat, "float");
 
-                        break;
-                    case "signed": // CONVERTING TO SIGNED BINARY
+                    break;
+                case "signed": // CONVERTING TO SIGNED BINARY
 
-                        convertedValue = this.converter.ConvertToSigned(inputFloat, "float");
+                    convertedValue = this.converter.ConvertToSigned(inputFloat, "float");
 
-                        break;
-                    case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
+                    break;
+                case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
 
-                        convertedValue = this.converter.ConvertToOnesComplement(inputFloat, "float");
+                    convertedValue = this.converter.ConvertToOnesComplement(inputFloat, "float");
 
-                        break;
-                    case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
+                    break;
+                case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
 
-                        convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "float");
+                    convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "float");
 
-                        break;
-                    case "decimal": // CONVERTING TO DECIMAL
+                    break;
+                case "decimal": // CONVERTING TO DECIMAL
 
-                        convertedValue = Convert.ToString(Math.Round(input));
+                    convertedValue = Convert.ToString(Math.Round(input));
 
-                        break;
-                }
-            }
-            else
-            {
-                switch (convertingTo)
-                {
-                    case "unsigned": // CONVERTING TO UNSIGNED BINARY
-
-                        convertedValue = this.converter.ConvertToUnsigned(inputFloat, "decimal");
-
-                        break;
-                    case "signed": // CONVERTING TO SIGNED BINARY
-
-                        convertedValue = this.converter.ConvertToSigned(inputFloat, "decimal");
-
-                        break;
-                    case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
-
-                        convertedValue = this.converter.ConvertToOnesComplement(inputFloat, "decimal");
-
-                        break;
-                    case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
-
-                        convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "decimal");
-
-                        break;
-                    case "decimal": // CONVERTING TO DECIMAL?
-
-                        convertedValue = Convert.ToString(input); // Return same value...
-
-                        break;
-                }
+                    break;
             }
             return convertedValue;
         }
