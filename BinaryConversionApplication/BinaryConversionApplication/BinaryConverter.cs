@@ -226,22 +226,22 @@ namespace BinaryConversionApplication
             {
                 case "unsigned":
 
-                    convertedValue = "";
+                    convertedValue = this.fromUnsignedToFloat(input);
 
                     break;
                 case "signed":
 
-                    convertedValue = "";
+                    convertedValue = this.fromSignedToFloat(input);
 
                     break;
                 case "ones-complement":
 
-                    convertedValue = "";
+                    convertedValue = this.fromOnesComplementToFloat(input);
 
                     break;
                 case "twos-complement":
 
-                    convertedValue = "";
+                    convertedValue = this.fromTwosComplementToFloat(input);
 
                     break;
             }
@@ -533,7 +533,29 @@ namespace BinaryConversionApplication
          #                                                                             #
          ###############################################################################*/
 
-        
+        // Method to convert from unsigned binary to floating point
+        private string fromUnsignedToFloat(string input)
+        {
+            return "Not yet available.";
+        }
+
+        // Method to convert from signed binary to floating point
+        private string fromSignedToFloat(string input)
+        {
+            return "Not yet available.";
+        }
+
+        // Method to convert from ones complement binary to floating point
+        private string fromOnesComplementToFloat(string input)
+        {
+            return "Not yet available.";
+        }
+
+        // Method to convert from twos complement binary to floating point
+        private string fromTwosComplementToFloat(string input)
+        {
+            return "Not yet available.";
+        }
 
         /*##############################################################################
          #                                                                             #
