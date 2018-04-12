@@ -217,12 +217,44 @@ namespace BinaryConversionApplication
             return convertedValue;
         }
 
+        // Method to convert user input into a floating point number
+        public string ConvertToFloat(string input, string repType)
+        {
+            string convertedValue = "";
+
+            switch (repType)
+            {
+                case "unsigned":
+
+                    convertedValue = "";
+
+                    break;
+                case "signed":
+
+                    convertedValue = "";
+
+                    break;
+                case "ones-complement":
+
+                    convertedValue = "";
+
+                    break;
+                case "twos-complement":
+
+                    convertedValue = "";
+
+                    break;
+            }
+
+            return convertedValue;
+        }
+
         /*###############################################################################
           #                                                                             #
           #                        CONVERTING TO UNSIGNED                               #
           #                                                                             #
           ###############################################################################*/
-        
+
         // Method to covert from twos's complement binary to unsigned
         private string fromTwosComplementToUnsigned(string input)
         {

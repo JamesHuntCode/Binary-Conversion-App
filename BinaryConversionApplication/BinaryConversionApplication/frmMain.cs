@@ -40,7 +40,7 @@ namespace BinaryConversionApplication
                 string validatedBinaryInput;
 
                 // Run further validations
-                if (!this.radDecimal.Checked)
+                if ((!this.radDecimal.Checked) && (!this.radFloat.Checked))
                 {
                     // Validate the binary input
                     if (validator.ValidateUserInput(userInput))
@@ -73,32 +73,58 @@ namespace BinaryConversionApplication
                 }
                 else
                 {
-                    int userInputValue;
-
-                    // Validate decimal input
-                    if (int.TryParse(userInput, out userInputValue))
+                    if (this.radDecimal.Checked)
                     {
-                        if ((this.validator.runDecimalValidations(userInputValue, this.getConvertingTo())) && (this.isValidNumber(userInputValue)))
+                        int userInputValue;
+
+                        // Validate decimal input
+                        if (int.TryParse(userInput, out userInputValue))
                         {
-                            // Get conversion type
-                            string convertingTo = this.getConvertingTo();
+                            if ((this.validator.runDecimalValidations(userInputValue, this.getConvertingTo())) && (this.isValidNumber(userInputValue)))
+                            {
+                                // Get conversion type
+                                string convertingTo = this.getConvertingTo();
 
-                            // Convert and display binary conversion
-                            string output = this.convertDecimalValue(convertingTo, userInputValue);
+                                // Convert and display binary conversion
+                                string output = this.convertDecimalValue(convertingTo, userInputValue);
 
-                            // Output converted value
-                            this.txtOutputBinary.Text = output;
+                                // Output converted value
+                                this.txtOutputBinary.Text = output;
+                            }
+                            else
+                            {
+                                MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
+                                this.txtInputBinary.Text = ""; // Reset text field
+                            }
                         }
                         else
                         {
-                            MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
+                            MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
                             this.txtInputBinary.Text = ""; // Reset text field
                         }
                     }
                     else
                     {
-                        MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
-                        this.txtInputBinary.Text = ""; // Reset text field
+                        double userInputValue;
+
+                        // validate floating point input
+                        if (double.TryParse(userInput, out userInputValue))
+                        {
+                            if ((this.validator.runFloatValidations(userInputValue, this.getConvertingTo())) && (this.isValidFloat(userInputValue)))
+                            {
+
+                            }
+                            else
+                            {
+                                MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
+                                this.txtInputBinary.Text = ""; // Reset text field
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(text: "Oops! Please make sure you input a floating point value. Please try again.");
+                            this.txtInputBinary.Text = ""; // Reset text field
+                        }
                     }
                 }
             }
@@ -125,6 +151,19 @@ namespace BinaryConversionApplication
         private bool isValidNumber(int input)
         {
             if ((this.radDecimal.Checked) && (this.radUnsignedOut.Checked) && (input < 0))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        // Method used to ensure user's input complies with representation boundaries
+        private bool isValidFloat(double input)
+        {
+            if ((this.radFloat.Checked) && (this.radUnsignedOut.Checked) && (input < 0))
             {
                 return false;
             }
@@ -172,6 +211,10 @@ namespace BinaryConversionApplication
             {
                 return "ones-complement";
             }
+            else if (this.radFloatOut.Checked)
+            {
+                return "float";
+            }
             else
             {
                 return "twos-complement";
@@ -197,6 +240,10 @@ namespace BinaryConversionApplication
             else if (this.radTwosOut.Checked)
             {
                 return "twos-complement";
+            }
+            else if (this.radFloatOut.Checked)
+            {
+                return "float";
             }
             else
             {
