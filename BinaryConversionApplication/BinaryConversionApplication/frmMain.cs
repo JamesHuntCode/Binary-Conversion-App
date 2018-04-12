@@ -85,7 +85,7 @@ namespace BinaryConversionApplication
                                 // Get conversion type
                                 string convertingTo = this.getConvertingTo();
 
-                                // Convert and display binary conversion
+                                // Convert value
                                 string output = this.convertDecimalValue(convertingTo, userInputValue);
 
                                 // Output converted value
@@ -112,7 +112,14 @@ namespace BinaryConversionApplication
                         {
                             if ((this.validator.runFloatValidations(userInputValue, this.getConvertingTo())) && (this.isValidFloat(userInputValue)))
                             {
+                                // Get conversion type 
+                                string convertingTo = this.getConvertingTo();
 
+                                // Convert value
+                                string output = this.convertFloatValue(convertingTo, userInputValue);
+
+                                // Output converted value
+                                this.txtOutputBinary.Text = output;
                             }
                             else
                             {
@@ -351,6 +358,80 @@ namespace BinaryConversionApplication
                     convertedValue = Convert.ToString(input); // Return same value...
 
                     break;
+            }
+            return convertedValue;
+        }
+
+        // Method to invoke conversion from float to desired binary representation
+        private string convertFloatValue(string convertingTo, double input)
+        {
+            string inputFloat = Convert.ToString(input);
+            string convertTo = convertingTo;
+            bool isActuallyFloat = (inputFloat.Contains('.'));
+
+            string convertedValue = "";
+
+            if (isActuallyFloat)
+            {
+                switch (convertingTo)
+                {
+                    case "unsigned": // CONVERTING TO UNSIGNED BINARY
+
+                        convertedValue = this.converter.ConvertToUnsigned(inputFloat, "float");
+
+                        break;
+                    case "signed": // CONVERTING TO SIGNED BINARY
+
+                        convertedValue = this.converter.ConvertToSigned(inputFloat, "float");
+
+                        break;
+                    case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
+
+                        convertedValue = this.converter.ConvertToOnesComplement(inputFloat, "float");
+
+                        break;
+                    case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
+
+                        convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "float");
+
+                        break;
+                    case "decimal": // CONVERTING TO DECIMAL
+
+                        convertedValue = Convert.ToString(Math.Round(input));
+
+                        break;
+                }
+            }
+            else
+            {
+                switch (convertingTo)
+                {
+                    case "unsigned": // CONVERTING TO UNSIGNED BINARY
+
+                        convertedValue = this.converter.ConvertToUnsigned(inputFloat, "decimal");
+
+                        break;
+                    case "signed": // CONVERTING TO SIGNED BINARY
+
+                        convertedValue = this.converter.ConvertToSigned(inputFloat, "decimal");
+
+                        break;
+                    case "ones-complement": // CONVERTING TO ONE'S COMPLEMENT
+
+                        convertedValue = this.converter.ConvertToOnesComplement(inputFloat, "decimal");
+
+                        break;
+                    case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
+
+                        convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "decimal");
+
+                        break;
+                    case "decimal": // CONVERTING TO DECIMAL?
+
+                        convertedValue = Convert.ToString(input); // Return same value...
+
+                        break;
+                }
             }
             return convertedValue;
         }
