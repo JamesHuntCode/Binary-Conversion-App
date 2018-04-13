@@ -62,6 +62,11 @@ namespace BinaryConversionApplication
                     convertedValue = this.fromDecimalToUnsigned(input);
 
                     break;
+                case "float":
+
+                    convertedValue = this.fromFloatToUnsigned(input);
+
+                    break;
             }
 
             return convertedValue;
@@ -180,6 +185,7 @@ namespace BinaryConversionApplication
                     convertedValue = this.fromDecimalToTwosComplement(input);
 
                     break;
+
             }
 
             return convertedValue;
@@ -227,21 +233,6 @@ namespace BinaryConversionApplication
                 case "unsigned":
 
                     convertedValue = this.fromUnsignedToFloat(input);
-
-                    break;
-                case "signed":
-
-                    convertedValue = this.fromSignedToFloat(input);
-
-                    break;
-                case "ones-complement":
-
-                    convertedValue = this.fromOnesComplementToFloat(input);
-
-                    break;
-                case "twos-complement":
-
-                    convertedValue = this.fromTwosComplementToFloat(input);
 
                     break;
             }
@@ -300,6 +291,11 @@ namespace BinaryConversionApplication
             binaryValues.Reverse();
             string formattedOutput = string.Join("", binaryValues.ToArray());
             return formattedOutput;
+        }
+
+        private string fromFloatToUnsigned(string input)
+        {
+            return "not yet available";
         }
 
         /*##############################################################################
@@ -536,25 +532,7 @@ namespace BinaryConversionApplication
         // Method to convert from unsigned binary to floating point
         private string fromUnsignedToFloat(string input)
         {
-            return "Not yet available.";
-        }
-
-        // Method to convert from signed binary to floating point
-        private string fromSignedToFloat(string input)
-        {
-            return "Not yet available.";
-        }
-
-        // Method to convert from ones complement binary to floating point
-        private string fromOnesComplementToFloat(string input)
-        {
-            return "Not yet available.";
-        }
-
-        // Method to convert from twos complement binary to floating point
-        private string fromTwosComplementToFloat(string input)
-        {
-            return "Not yet available.";
+            return "Not yet available";
         }
 
         /*##############################################################################

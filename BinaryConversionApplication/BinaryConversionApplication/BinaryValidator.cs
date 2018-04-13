@@ -10,37 +10,55 @@ namespace BinaryConversionApplication
     public class BinaryValidator
     {
         // Method to ensure user has entered valid data
-        public bool ValidateUserInput(string input)
+        public bool ValidateUserInput(string input, bool isFloat)
         {
-            if (input.Length == 8)
+            if (!isFloat)
             {
-                // 8 bit binary input
-                return isBinary(input);
-            } 
-            else if (input.Length == 4)
-            {
-                // 4 bit binary input
-                return isBinary(input);
+                if ((input.Length == 8) || (input.Length == 4))
+                {
+                    return isBinary(input, isFloat);
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                // invalid input
-                return false;
+                if ((input.Length > 0) && (input.Length < 17))
+                {
+                    return isBinary(input, isFloat);
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
         // Method to check value input by user is binary (used only in this class)
-        private bool isBinary(string input)
+        private bool isBinary(string input, bool isFloat)
         {
             char[] values = input.ToCharArray();
 
-            // Check value is binary
-            for (int i = 0; i < values.Length; i++)
+            if (!isFloat)
             {
-                if (!values[i].Equals('0') && !values[i].Equals('1'))
+                for (int i = 0; i < values.Length; i++)
                 {
-                    // Value is not binary
-                    return false;
+                    if (!values[i].Equals('0') && !values[i].Equals('1'))
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    if ((!values[i].Equals('0')) && (!values[i].Equals('1')) && (!values[i].Equals('.')))
+                    {
+                        return false;
+                    }
                 }
             }
             // Value is binary

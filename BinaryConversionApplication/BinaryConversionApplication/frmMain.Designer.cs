@@ -59,10 +59,9 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(16, 11);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeader.Location = new System.Drawing.Point(12, 9);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(605, 52);
+            this.lblHeader.Size = new System.Drawing.Size(480, 39);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Binary Conversion Application";
             // 
@@ -70,21 +69,19 @@
             // 
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopyright.Location = new System.Drawing.Point(813, 11);
-            this.lblCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCopyright.Location = new System.Drawing.Point(601, 9);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(151, 20);
+            this.lblCopyright.Size = new System.Drawing.Size(130, 16);
             this.lblCopyright.TabIndex = 1;
-            this.lblCopyright.Text = "James Hunt / 2018";
+            this.lblCopyright.Text = "(C) James Hunt 2018";
             // 
             // lblRepType
             // 
             this.lblRepType.AutoSize = true;
             this.lblRepType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepType.Location = new System.Drawing.Point(18, 113);
-            this.lblRepType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRepType.Location = new System.Drawing.Point(14, 92);
             this.lblRepType.Name = "lblRepType";
-            this.lblRepType.Size = new System.Drawing.Size(233, 39);
+            this.lblRepType.Size = new System.Drawing.Size(188, 31);
             this.lblRepType.TabIndex = 5;
             this.lblRepType.Text = "Convert From:";
             // 
@@ -92,10 +89,9 @@
             // 
             this.lblConvert.AutoSize = true;
             this.lblConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvert.Location = new System.Drawing.Point(18, 448);
-            this.lblConvert.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConvert.Location = new System.Drawing.Point(14, 364);
             this.lblConvert.Name = "lblConvert";
-            this.lblConvert.Size = new System.Drawing.Size(194, 39);
+            this.lblConvert.Size = new System.Drawing.Size(157, 31);
             this.lblConvert.TabIndex = 9;
             this.lblConvert.Text = "Convert To:";
             // 
@@ -103,20 +99,18 @@
             // 
             this.lblYourAnswer.AutoSize = true;
             this.lblYourAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYourAnswer.Location = new System.Drawing.Point(707, 678);
-            this.lblYourAnswer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblYourAnswer.Location = new System.Drawing.Point(530, 551);
             this.lblYourAnswer.Name = "lblYourAnswer";
-            this.lblYourAnswer.Size = new System.Drawing.Size(220, 39);
+            this.lblYourAnswer.Size = new System.Drawing.Size(177, 31);
             this.lblYourAnswer.TabIndex = 10;
             this.lblYourAnswer.Text = "Your Answer:";
             // 
             // btnConvert
             // 
             this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvert.Location = new System.Drawing.Point(679, 416);
-            this.btnConvert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConvert.Location = new System.Drawing.Point(509, 338);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(289, 73);
+            this.btnConvert.Size = new System.Drawing.Size(217, 59);
             this.btnConvert.TabIndex = 11;
             this.btnConvert.Text = "Convert Values";
             this.btnConvert.UseVisualStyleBackColor = true;
@@ -126,10 +120,9 @@
             // 
             this.radUnsigned.AutoSize = true;
             this.radUnsigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radUnsigned.Location = new System.Drawing.Point(8, 18);
-            this.radUnsigned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radUnsigned.Location = new System.Drawing.Point(6, 15);
             this.radUnsigned.Name = "radUnsigned";
-            this.radUnsigned.Size = new System.Drawing.Size(234, 35);
+            this.radUnsigned.Size = new System.Drawing.Size(188, 29);
             this.radUnsigned.TabIndex = 14;
             this.radUnsigned.TabStop = true;
             this.radUnsigned.Text = "Unsigned Binary";
@@ -139,10 +132,9 @@
             // 
             this.radTwosComp.AutoSize = true;
             this.radTwosComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTwosComp.Location = new System.Drawing.Point(8, 148);
-            this.radTwosComp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radTwosComp.Location = new System.Drawing.Point(6, 120);
             this.radTwosComp.Name = "radTwosComp";
-            this.radTwosComp.Size = new System.Drawing.Size(266, 35);
+            this.radTwosComp.Size = new System.Drawing.Size(211, 29);
             this.radTwosComp.TabIndex = 15;
             this.radTwosComp.TabStop = true;
             this.radTwosComp.Text = "Two\'s Complement";
@@ -152,10 +144,9 @@
             // 
             this.radOnesComp.AutoSize = true;
             this.radOnesComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOnesComp.Location = new System.Drawing.Point(8, 105);
-            this.radOnesComp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radOnesComp.Location = new System.Drawing.Point(6, 85);
             this.radOnesComp.Name = "radOnesComp";
-            this.radOnesComp.Size = new System.Drawing.Size(265, 35);
+            this.radOnesComp.Size = new System.Drawing.Size(211, 29);
             this.radOnesComp.TabIndex = 16;
             this.radOnesComp.TabStop = true;
             this.radOnesComp.Text = "One\'s Complement";
@@ -165,10 +156,9 @@
             // 
             this.radSigned.AutoSize = true;
             this.radSigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radSigned.Location = new System.Drawing.Point(8, 61);
-            this.radSigned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSigned.Location = new System.Drawing.Point(6, 50);
             this.radSigned.Name = "radSigned";
-            this.radSigned.Size = new System.Drawing.Size(203, 35);
+            this.radSigned.Size = new System.Drawing.Size(164, 29);
             this.radSigned.TabIndex = 17;
             this.radSigned.TabStop = true;
             this.radSigned.Text = "Signed Binary";
@@ -182,11 +172,9 @@
             this.grpInput.Controls.Add(this.radTwosComp);
             this.grpInput.Controls.Add(this.radSigned);
             this.grpInput.Controls.Add(this.radOnesComp);
-            this.grpInput.Location = new System.Drawing.Point(16, 156);
-            this.grpInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpInput.Location = new System.Drawing.Point(12, 127);
             this.grpInput.Name = "grpInput";
-            this.grpInput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpInput.Size = new System.Drawing.Size(317, 277);
+            this.grpInput.Size = new System.Drawing.Size(238, 225);
             this.grpInput.TabIndex = 19;
             this.grpInput.TabStop = false;
             // 
@@ -194,10 +182,9 @@
             // 
             this.radFloat.AutoSize = true;
             this.radFloat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radFloat.Location = new System.Drawing.Point(9, 234);
-            this.radFloat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radFloat.Location = new System.Drawing.Point(7, 190);
             this.radFloat.Name = "radFloat";
-            this.radFloat.Size = new System.Drawing.Size(96, 35);
+            this.radFloat.Size = new System.Drawing.Size(78, 29);
             this.radFloat.TabIndex = 20;
             this.radFloat.TabStop = true;
             this.radFloat.Text = "Float";
@@ -207,10 +194,9 @@
             // 
             this.radDecimal.AutoSize = true;
             this.radDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDecimal.Location = new System.Drawing.Point(9, 191);
-            this.radDecimal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radDecimal.Location = new System.Drawing.Point(7, 155);
             this.radDecimal.Name = "radDecimal";
-            this.radDecimal.Size = new System.Drawing.Size(133, 35);
+            this.radDecimal.Size = new System.Drawing.Size(107, 29);
             this.radDecimal.TabIndex = 19;
             this.radDecimal.TabStop = true;
             this.radDecimal.Text = "Decimal";
@@ -224,11 +210,9 @@
             this.grpOutput.Controls.Add(this.radTwosOut);
             this.grpOutput.Controls.Add(this.radSignedOut);
             this.grpOutput.Controls.Add(this.radOnesOut);
-            this.grpOutput.Location = new System.Drawing.Point(16, 491);
-            this.grpOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpOutput.Location = new System.Drawing.Point(12, 399);
             this.grpOutput.Name = "grpOutput";
-            this.grpOutput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpOutput.Size = new System.Drawing.Size(317, 277);
+            this.grpOutput.Size = new System.Drawing.Size(238, 225);
             this.grpOutput.TabIndex = 20;
             this.grpOutput.TabStop = false;
             // 
@@ -236,10 +220,9 @@
             // 
             this.radFloatOut.AutoSize = true;
             this.radFloatOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radFloatOut.Location = new System.Drawing.Point(10, 235);
-            this.radFloatOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radFloatOut.Location = new System.Drawing.Point(8, 191);
             this.radFloatOut.Name = "radFloatOut";
-            this.radFloatOut.Size = new System.Drawing.Size(96, 35);
+            this.radFloatOut.Size = new System.Drawing.Size(78, 29);
             this.radFloatOut.TabIndex = 19;
             this.radFloatOut.TabStop = true;
             this.radFloatOut.Text = "Float";
@@ -249,10 +232,9 @@
             // 
             this.radDecimalOut.AutoSize = true;
             this.radDecimalOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radDecimalOut.Location = new System.Drawing.Point(9, 192);
-            this.radDecimalOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radDecimalOut.Location = new System.Drawing.Point(7, 156);
             this.radDecimalOut.Name = "radDecimalOut";
-            this.radDecimalOut.Size = new System.Drawing.Size(133, 35);
+            this.radDecimalOut.Size = new System.Drawing.Size(107, 29);
             this.radDecimalOut.TabIndex = 18;
             this.radDecimalOut.TabStop = true;
             this.radDecimalOut.Text = "Decimal";
@@ -262,10 +244,9 @@
             // 
             this.radUnsignedOut.AutoSize = true;
             this.radUnsignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radUnsignedOut.Location = new System.Drawing.Point(9, 19);
-            this.radUnsignedOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radUnsignedOut.Location = new System.Drawing.Point(7, 15);
             this.radUnsignedOut.Name = "radUnsignedOut";
-            this.radUnsignedOut.Size = new System.Drawing.Size(234, 35);
+            this.radUnsignedOut.Size = new System.Drawing.Size(188, 29);
             this.radUnsignedOut.TabIndex = 14;
             this.radUnsignedOut.TabStop = true;
             this.radUnsignedOut.Text = "Unsigned Binary";
@@ -275,10 +256,9 @@
             // 
             this.radTwosOut.AutoSize = true;
             this.radTwosOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTwosOut.Location = new System.Drawing.Point(9, 149);
-            this.radTwosOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radTwosOut.Location = new System.Drawing.Point(7, 121);
             this.radTwosOut.Name = "radTwosOut";
-            this.radTwosOut.Size = new System.Drawing.Size(266, 35);
+            this.radTwosOut.Size = new System.Drawing.Size(211, 29);
             this.radTwosOut.TabIndex = 15;
             this.radTwosOut.TabStop = true;
             this.radTwosOut.Text = "Two\'s Complement";
@@ -288,10 +268,9 @@
             // 
             this.radSignedOut.AutoSize = true;
             this.radSignedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radSignedOut.Location = new System.Drawing.Point(9, 62);
-            this.radSignedOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSignedOut.Location = new System.Drawing.Point(7, 50);
             this.radSignedOut.Name = "radSignedOut";
-            this.radSignedOut.Size = new System.Drawing.Size(203, 35);
+            this.radSignedOut.Size = new System.Drawing.Size(164, 29);
             this.radSignedOut.TabIndex = 17;
             this.radSignedOut.TabStop = true;
             this.radSignedOut.Text = "Signed Binary";
@@ -301,10 +280,9 @@
             // 
             this.radOnesOut.AutoSize = true;
             this.radOnesOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOnesOut.Location = new System.Drawing.Point(9, 106);
-            this.radOnesOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radOnesOut.Location = new System.Drawing.Point(7, 86);
             this.radOnesOut.Name = "radOnesOut";
-            this.radOnesOut.Size = new System.Drawing.Size(265, 35);
+            this.radOnesOut.Size = new System.Drawing.Size(211, 29);
             this.radOnesOut.TabIndex = 16;
             this.radOnesOut.TabStop = true;
             this.radOnesOut.Text = "One\'s Complement";
@@ -313,37 +291,34 @@
             // txtInputBinary
             // 
             this.txtInputBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputBinary.Location = new System.Drawing.Point(679, 209);
-            this.txtInputBinary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInputBinary.Location = new System.Drawing.Point(509, 170);
             this.txtInputBinary.Name = "txtInputBinary";
-            this.txtInputBinary.Size = new System.Drawing.Size(288, 37);
+            this.txtInputBinary.Size = new System.Drawing.Size(217, 31);
             this.txtInputBinary.TabIndex = 22;
             // 
             // lvlYourInput
             // 
             this.lvlYourInput.AutoSize = true;
             this.lvlYourInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlYourInput.Location = new System.Drawing.Point(671, 156);
-            this.lvlYourInput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lvlYourInput.Location = new System.Drawing.Point(503, 127);
             this.lvlYourInput.Name = "lvlYourInput";
-            this.lvlYourInput.Size = new System.Drawing.Size(279, 39);
+            this.lvlYourInput.Size = new System.Drawing.Size(223, 31);
             this.lvlYourInput.TabIndex = 23;
             this.lvlYourInput.Text = "Input Your Value:";
             // 
             // txtOutputBinary
             // 
             this.txtOutputBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutputBinary.Location = new System.Drawing.Point(679, 724);
-            this.txtOutputBinary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOutputBinary.Location = new System.Drawing.Point(509, 588);
             this.txtOutputBinary.Name = "txtOutputBinary";
-            this.txtOutputBinary.Size = new System.Drawing.Size(288, 37);
+            this.txtOutputBinary.Size = new System.Drawing.Size(217, 31);
             this.txtOutputBinary.TabIndex = 24;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 783);
+            this.ClientSize = new System.Drawing.Size(743, 636);
             this.Controls.Add(this.txtOutputBinary);
             this.Controls.Add(this.lvlYourInput);
             this.Controls.Add(this.txtInputBinary);
@@ -356,7 +331,6 @@
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Binary Converter";

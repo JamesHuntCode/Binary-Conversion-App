@@ -43,7 +43,7 @@ namespace BinaryConversionApplication
                 if ((!this.radDecimal.Checked) && (!this.radFloat.Checked))
                 {
                     // Validate the binary input
-                    if (validator.ValidateUserInput(userInput))
+                    if (validator.ValidateUserInput(userInput, (this.radFloatOut.Checked)))
                     {
                         validatedBinaryInput = userInput;
 
@@ -68,7 +68,8 @@ namespace BinaryConversionApplication
                     {
                         // Input is not valid - stop
                         MessageBox.Show(text: "Oops! Double check your input. Please try again.");
-                        this.txtInputBinary.Text = ""; // Reset text field
+                        this.txtInputBinary.Text = ""; 
+                        this.txtOutputBinary.Text = "";
                     }
                 }
                 else
@@ -94,13 +95,15 @@ namespace BinaryConversionApplication
                             else
                             {
                                 MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
-                                this.txtInputBinary.Text = ""; // Reset text field
+                                this.txtInputBinary.Text = "";
+                                this.txtOutputBinary.Text = "";
                             }
                         }
                         else
                         {
                             MessageBox.Show(text: "Oops! Please make sure you input a decimal value. Please try again.");
-                            this.txtInputBinary.Text = ""; // Reset text field
+                            this.txtInputBinary.Text = "";
+                            this.txtOutputBinary.Text = "";
                         }
                     }
                     else
@@ -110,7 +113,7 @@ namespace BinaryConversionApplication
                         // validate floating point input
                         if (double.TryParse(userInput, out userInputValue))
                         {
-                            if ((this.validator.runFloatValidations(userInputValue, this.getConvertingTo())) && (this.isValidFloat(userInputValue)))
+                            if (this.validator.runFloatValidations(userInputValue, this.getConvertingTo()))
                             {
                                 // Get conversion type 
                                 string convertingTo = this.getConvertingTo();
@@ -134,13 +137,15 @@ namespace BinaryConversionApplication
                             else
                             {
                                 MessageBox.Show(text: "Make sure your value can be represented in the style you have chosen to output to. Please try again.");
-                                this.txtInputBinary.Text = ""; // Reset text field
+                                this.txtInputBinary.Text = "";
+                                this.txtOutputBinary.Text = "";
                             }
                         }
                         else
                         {
                             MessageBox.Show(text: "Oops! Please make sure you input a floating point value. Please try again.");
-                            this.txtInputBinary.Text = ""; // Reset text field
+                            this.txtInputBinary.Text = "";
+                            this.txtOutputBinary.Text = "";
                         }
                     }
                 }
@@ -148,6 +153,8 @@ namespace BinaryConversionApplication
             else
             {
                 MessageBox.Show(text: "Oops! Double check your input. Please try again.");
+                this.txtInputBinary.Text = "";
+                this.txtOutputBinary.Text = "";
             }
         }
 
@@ -155,6 +162,10 @@ namespace BinaryConversionApplication
         private bool runBaseValidations(string input)
         {
             if (((this.radSigned.Checked) || (this.radOnesComp.Checked) || (this.radTwosComp.Checked)) && (input.Length == 4))
+            {
+                return false;
+            }
+            else if ((this.getUserInput().Contains('.')) && !(this.radUnsigned.Checked || this.radFloat.Checked) && !(this.radFloatOut.Checked || this.radUnsignedOut.Checked))
             {
                 return false;
             }
@@ -168,19 +179,6 @@ namespace BinaryConversionApplication
         private bool isValidNumber(int input)
         {
             if ((this.radDecimal.Checked) && (this.radUnsignedOut.Checked) && (input < 0))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        // Method used to ensure user's input complies with representation boundaries
-        private bool isValidFloat(double input)
-        {
-            if ((this.radFloat.Checked) && (this.radUnsignedOut.Checked) && (input < 0))
             {
                 return false;
             }
@@ -228,15 +226,15 @@ namespace BinaryConversionApplication
             {
                 return "ones-complement";
             }
-            else if (this.radFloatOut.Checked)
+            else if (this.radFloat.Checked)
             {
                 return "float";
             }
-            else
+            else if (this.radTwosComp.Checked)
             {
                 return "twos-complement";
             }
-            
+            return string.Empty;
         }
 
         // Method to get what the user is converting to
@@ -262,10 +260,11 @@ namespace BinaryConversionApplication
             {
                 return "float";
             }
-            else
+            else if (this.radDecimalOut.Checked)
             {
                 return "decimal";
             }
+            return string.Empty;
         }
 
         // Method to create a new binary value which can be manipulated
@@ -324,6 +323,11 @@ namespace BinaryConversionApplication
                     convertedValue = this.converter.ConvertToTwosComplement(originalBinaryValue, convertingFrom);
 
                     break;
+                case "float": // CONVERTING TO FLOATING POINT
+
+                    convertedValue = this.converter.ConvertToFloat(originalBinaryValue, convertingFrom);
+
+                    break;
                 case "decimal": // CONVERTING TO DECIMAL
 
                     convertedValue = this.converter.ConvertToDecimal(originalBinaryValue, convertingFrom);
@@ -363,9 +367,14 @@ namespace BinaryConversionApplication
                     convertedValue = this.converter.ConvertToTwosComplement(inputInteger, "decimal");
 
                     break;
+                case "float": // CONVERTING TO FLOAT? 
+
+                    convertedValue = Convert.ToString(input);
+
+                    break;
                 case "decimal": // CONVERTING TO DECIMAL?
 
-                    convertedValue = Convert.ToString(input); // Return same value...
+                    convertedValue = Convert.ToString(input);
 
                     break;
             }
@@ -400,6 +409,11 @@ namespace BinaryConversionApplication
                 case "twos-complement": // CONVERTING TO TWO'S COMPLEMENT
 
                     convertedValue = this.converter.ConvertToTwosComplement(inputFloat, "float");
+
+                    break;
+                case "float": // CONVERTING TO FLOAT?
+
+                    convertedValue = Convert.ToString(input);
 
                     break;
                 case "decimal": // CONVERTING TO DECIMAL
