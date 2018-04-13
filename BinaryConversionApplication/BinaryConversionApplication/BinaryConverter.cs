@@ -559,7 +559,7 @@ namespace BinaryConversionApplication
         // Method to convert from unsigned binary to floating point
         private string fromUnsignedToFloat(string input)
         {
-            return "Not yet available";
+            return "In development...";
         }
 
         /*##############################################################################
