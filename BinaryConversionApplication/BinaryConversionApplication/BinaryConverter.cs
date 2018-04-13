@@ -293,9 +293,36 @@ namespace BinaryConversionApplication
             return formattedOutput;
         }
 
+        // Method to convert from floating point values to unsigned binary
         private string fromFloatToUnsigned(string input)
         {
-            return "not yet available";
+            string[] parts = input.Split('.');
+            string integer = parts[0];
+            string floatingValue = "0." + parts[1];
+
+            double floating = Convert.ToDouble(floatingValue);
+            List<string> bits = new List<string>();
+            bits.Clear();
+
+            for (int i = 0; i < 8; i++)
+            {
+                floating *= 2;
+                string[] newParts;
+
+                if (floating.ToString().Contains('.'))
+                {
+                    newParts = floating.ToString().Split('.');
+                    bits.Add(newParts[0]);
+                    floating = Convert.ToDouble("0." + newParts[1]);
+                }
+                else
+                {
+                    bits.Add("1");
+                    break;
+                }
+            }
+
+            return this.fromDecimalToUnsigned(integer) + "." + String.Join("", bits);
         }
 
         /*##############################################################################
