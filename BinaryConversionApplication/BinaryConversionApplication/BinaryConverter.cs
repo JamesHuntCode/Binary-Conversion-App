@@ -559,7 +559,23 @@ namespace BinaryConversionApplication
         // Method to convert from unsigned binary to floating point
         private string fromUnsignedToFloat(string input)
         {
-            return "In development...";
+            string[] parts = input.Split('.');
+            //string real = this.fromUnsignedToDecimal(parts[0]); // revise this - it throws error due to binary length (needs to be 8 or 4)
+            string floating = parts[1];
+
+            char[] bits = floating.ToCharArray();
+            List<double> values = new List<double>();
+
+            for (int i = 0; i < bits.Length; i++)
+            {
+                double power = Convert.ToDouble(i + 1);
+                double bit = (double)(bits[i]);
+
+                //double result = Math.Pow(bit, -(power));
+                //values.Add(result);
+            }
+
+            return /*real + "." +*/ Convert.ToString(this.getDoubleTotal(values));
         }
 
         /*##############################################################################
@@ -632,6 +648,19 @@ namespace BinaryConversionApplication
         private string returnNA()
         {
             return "N/A";
+        }
+
+        // Method used to get total of double list
+        private double getDoubleTotal(List<double> list)
+        {
+            double sum = 0.00;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                sum += list[i];
+            }
+
+            return sum;
         }
     }
 }
