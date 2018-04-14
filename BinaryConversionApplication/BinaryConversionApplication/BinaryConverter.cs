@@ -563,19 +563,24 @@ namespace BinaryConversionApplication
             //string real = this.fromUnsignedToDecimal(parts[0]); // revise this - it throws error due to binary length (needs to be 8 or 4)
             string floating = parts[1];
 
-            char[] bits = floating.ToCharArray();
-            List<double> values = new List<double>();
-
-            for (int i = 0; i < bits.Length; i++)
+            Dictionary<double, char> table = new Dictionary<double, char>();
+            double power = 0.5;
+            for (int i = 0; i < floating.Length; i++)
             {
-                double power = Convert.ToDouble(i + 1);
-                double bit = (double)(bits[i]);
-
-                //double result = Math.Pow(bit, -(power));
-                //values.Add(result);
+                table.Add(power, floating[i]);
+                power /= 2;
             }
 
-            return /*real + "." +*/ Convert.ToString(this.getDoubleTotal(values));
+            double sum = 0;
+            foreach (KeyValuePair<double, char> position in table)
+            {
+                if (position.Value.Equals('1'))
+                {
+                    sum += position.Key;
+                }
+            }
+
+            return Convert.ToString(sum);
         }
 
         /*##############################################################################
@@ -648,19 +653,6 @@ namespace BinaryConversionApplication
         private string returnNA()
         {
             return "N/A";
-        }
-
-        // Method used to get total of double list
-        private double getDoubleTotal(List<double> list)
-        {
-            double sum = 0.00;
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                sum += list[i];
-            }
-
-            return sum;
         }
     }
 }
