@@ -560,7 +560,8 @@ namespace BinaryConversionApplication
         private string fromUnsignedToFloat(string input)
         {
             string[] parts = input.Split('.');
-            //string real = this.fromUnsignedToDecimal(parts[0]); // revise this - it throws error due to binary length (needs to be 8 or 4)
+            List<string> realValues = new List<string>();
+            realValues.Add(parts[0]);
             string floating = parts[1];
 
             Dictionary<double, char> table = new Dictionary<double, char>();
@@ -580,7 +581,17 @@ namespace BinaryConversionApplication
                 }
             }
 
-            return Convert.ToString(sum);
+            if (parts[0].Length < 9)
+            {
+                while ((parts[0].Length + realValues.Count) < 9)
+                {
+                    realValues.Insert(0, "0");
+                }
+            }
+
+            string realValue = this.fromUnsignedToDecimal(String.Join("", realValues));
+
+            return realValue + "." + Convert.ToString(sum).Split('.')[1];
         }
 
         /*##############################################################################
