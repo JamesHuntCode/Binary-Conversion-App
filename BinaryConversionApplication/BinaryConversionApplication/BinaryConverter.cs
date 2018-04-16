@@ -410,18 +410,23 @@ namespace BinaryConversionApplication
         // Method to convert from unsigned to two's complement
         private string fromUnsignedToTwosComplement(string input)
         {
-            string onescomp = this.invertBitValues(input);
-            string twoscomp = this.fromOnesComplementToTwosComplement(onescomp);
-            return twoscomp;
+            return input;
         }
 
         // Method to convert from signed binary to two's complement
         private string fromSignedToTwosComplement(string input)
         {
-            int dec = Convert.ToInt32(this.fromSignedToDecimal(input));
-            string decPlus1 = Convert.ToString(dec + 1);
-            string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
-            return twoscomp;
+            if (!this.isPositiveBinary(input, false))
+            {
+                int dec = Convert.ToInt32(this.fromSignedToDecimal(input));
+                string decPlus1 = Convert.ToString(dec + 1);
+                string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
+                return twoscomp;
+            }
+            else
+            {
+                return input;
+            }
         }
 
         // Method to convert from one's complement to two's complement
@@ -436,9 +441,16 @@ namespace BinaryConversionApplication
         // Method to convert from decimal to two's complement
         private string fromDecimalToTwosComplement(string input)
         {
-            string decPlus1 = Convert.ToString(Convert.ToInt32(input) + 1);
-            string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
-            return twoscomp;
+            if (!this.isPositiveInteger(input))
+            {
+                string decPlus1 = Convert.ToString(Convert.ToInt32(input) + 1);
+                string twoscomp = this.fromDecimalToOnesComplement(decPlus1);
+                return twoscomp;
+            }
+            else
+            {
+                return this.fromDecimalToUnsigned(input);
+            }
         }
 
         /*##############################################################################
